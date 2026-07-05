@@ -26,7 +26,7 @@ const Order = () => {
     }, [])
     return (
         <>
-            <div id='service_container' className="grid lg:grid-cols-3 text-white md:grid-cols-2 container mx-auto gap-10 md:gap-5 my-10">
+            <div id='service_container' className=" grid lg:grid-cols-3 text-white md:grid-cols-2 container mx-auto px-3 md:px-0 gap-10 md:gap-5 md:my-10 my-20">
                 <div id='bot' className='flex relative items-center justify-between h-35 px-4 rounded-xl' style={{ background: 'linear-gradient(135deg, #0088cc, #32c5ff)' }}>
                     <p className='font-bold text-xl w-full'>توسعه ربات های تلگرامی</p>
                     <img src='/assets/image/my_service/bot.webp' loading='lazy' alt="ربات تلگرامی" className='w-67 -translate-y-4 h-43 object-contain' />

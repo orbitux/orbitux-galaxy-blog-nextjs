@@ -11,6 +11,7 @@ import SearchBlog from "@/components/Search/SearchBlog"
 import { FaArrowLeft } from "react-icons/fa6";
 import Link from "next/link"
 import SearchDialog from "./SearchDialog"
+import SearchInputUi from "./SearchInputUi"
 // import NotFound from "../not-found"
 const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
     const searchParams = useSearchParams()
@@ -43,7 +44,7 @@ const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
                         <div className="md:h-10 h-5 w-1 bg-green-600"></div>
                         <h4 className="text-4xl flex items-center">وبلاگ</h4>
                     </div>
-
+                    <SearchInputUi/>
                     <Link prefetch href={'/blog'} className="flex items-center gap-2 group">
                         <span className="text-xl">همه مطالب</span>
                         <FaArrowLeft size={20} className="group-hover:-translate-x-1.5 transition-all" />

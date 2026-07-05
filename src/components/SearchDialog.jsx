@@ -3,9 +3,10 @@ import { KeyboardEvent, memo, useEffect, useState } from "react";
 import React from 'react'
 import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "./ui/command";
 import Link from "next/link";
+import { useOpen } from "@/contexts/OpenDialogContext";
 
 const SearchDialog = ({ posts }) => {
-    const [open, setOpen] = useState(false)
+    const {open, setOpen} = useOpen()
     const [query, setQuery] = useState('')
     useEffect(() => {
         const onKeyDown = (e) => {
@@ -23,7 +24,7 @@ const SearchDialog = ({ posts }) => {
     return (
         <Command>
             <CommandDialog open={open} onOpenChange={setOpen}>
-                <CommandInput  value={query} onValueChange={setQuery} placeholder="جستجو در مقالات..." />
+                <CommandInput value={query} onValueChange={setQuery} placeholder="جستجو در مقالات..." />
                 <CommandList>
                     <CommandEmpty>
                         پستی پیدا نشد!
