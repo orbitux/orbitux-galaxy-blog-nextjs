@@ -27,8 +27,8 @@ body {
 .bg-contact-night {
     --s: 150px;
     /* control the size*/
-    --c1: #162456;
-    --c2: #00a63e;
+    --c1: #000;
+    --c2: #3c0366;
 
     --l: var(--c1) 20%, #0000 0;
     --g: 35%, var(--c2) 0 45%, var(--c1) 0;

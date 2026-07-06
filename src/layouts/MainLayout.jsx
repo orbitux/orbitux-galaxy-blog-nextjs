@@ -14,7 +14,7 @@ const MainLayout = ({ children }) => {
     // className="fanum" onClick={() => setIsMenuOpen(false)}
     return (
         <OpenProvider>
-            <div >
+            <div>
                 <Header />
                 <Order />
                 <CodeEditor />

@@ -28,11 +28,11 @@ const BlogContent = ({ post }) => {
               {summary}
             </p>
             <div className="flex justify-between">
-              <span>توسط : <span className="text-green-400 font-bold">{post.author}</span></span>
+              <span>توسط : <span className="text-purple-900 font-bold">{post.author}</span></span>
               {/* <span>{JalaliDate(post.fields.data)}</span> */}
             </div>
           </div>
-          <Link prefetch href={`/blog/post/${post.slug}`} className="bg-green-400 p-0 w-full text-white font-bold rounded-b-lg mt-5 cursor-pointer flex items-center justify-center gap-2 hover:bg-white hover:text-green-400 transition-all">
+          <Link prefetch href={`/blog/post/${post.slug}`} className="bg-purple-900 p-0 w-full text-white font-bold rounded-b-lg mt-5 cursor-pointer flex items-center justify-center gap-2 hover:bg-white hover:text-purple-900 transition-all">
             ادامه مطلب
             <IoIosArrowBack />
           </Link>

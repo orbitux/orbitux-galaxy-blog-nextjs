@@ -79,17 +79,17 @@ const Contact = () => {
               <Form className='mt-10'>
                 <div className='flex flex-col'>
                   <label htmlFor="name">نام</label>
-                  <Field type="text" id="name" name="name" className='border pr-3 py-1 focus:shadow-2xl focus:shadow-green-500  transition-all border-gray-400 rounded-sm' />
+                  <Field type="text" id="name" name="name" className='border pr-3 py-1 focus:shadow-2xl focus:shadow-purple-500  transition-all border-gray-400 rounded-sm' />
                   <ErrorMessage name='name' component="div" className='text-red-500' />
                 </div>
                 <div className='flex flex-col mt-5'>
                   <label htmlFor="email">ایمیل</label>
-                  <Field type="text" id="email" name="email" className='border pr-3 py-1 focus:shadow-2xl focus:shadow-green-500 transition-all border-gray-400 rounded-sm' />
+                  <Field type="text" id="email" name="email" className='border pr-3 py-1 focus:shadow-2xl focus:shadow-purple-500 transition-all border-gray-400 rounded-sm' />
                   <ErrorMessage name='email' component="div" className='text-red-500' />
                 </div>
                 <div className='flex flex-col mt-5'>
                   <label htmlFor="message">پیام</label>
-                  <Field as='textarea' type="text" id="message" name="message" className='border pr-3 py-1 focus:shadow-2xl focus:shadow-green-500 transition-all border-gray-400 rounded-sm' />
+                  <Field as='textarea' type="text" id="message" name="message" className='border pr-3 py-1 focus:shadow-2xl focus:shadow-purple-500 transition-all border-gray-400 rounded-sm' />
                   <ErrorMessage name='message' component="div" className='text-red-500' />
                 </div>
                 {/* <div className='mt-10'>
@@ -99,7 +99,7 @@ const Contact = () => {
                 />
               </div> */}
                 <div className='flex justify-center'>
-                  <button type='submit' disabled={messageLoading} className={`${messageLoading ? 'cursor-not-allowed opacity-50' : 'cursor-pointer hover:-translate-y-2 hover:bg-green-500'} mt-5 bg-green-700 flex items-center px-5 py-2 rounded-md text-white transition-all`}>
+                  <button type='submit' disabled={messageLoading} className={`${messageLoading ? 'cursor-not-allowed opacity-50' : 'cursor-pointer hover:-translate-y-2 hover:bg-black'} mt-5 bg-purple-700 flex items-center px-5 py-2 rounded-md text-white transition-all`}>
                     {messageLoading ? 'در حال ارسال پیام ...' : 'ارسال پیام'}
                     {messageLoading && <ContactPreLoader />}
                   </button>

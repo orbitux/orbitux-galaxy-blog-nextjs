@@ -28,11 +28,11 @@ const CodeEditor = () => {
             <div className='flex flex-col md:flex-row items-center md:justify-around my-10'>
                 <div id='section_right' className='w-[50%] flex flex-col justify-between'>
                     <div >
-                        <h2 className='text-4xl text-green-500 leading-32'>کد ادیتور آنلاین</h2>
+                        <h2 className='text-4xl text-purple-500 leading-32'>کد ادیتور آنلاین</h2>
                         <p className='text-xl'>شما عزیزان میتوانید در شرایطی که دسترسی به IDE های خودتون ندارید از کد ادیتور آنلاین ما استفاده کنید کد ادیتوری ساده که از زبان های html,css,js پشتیبانی میکند و میتواند نیاز های اولیه شمارا در شرایط خاص برطرف سازد.</p>
                     </div>
                     <div className='flex justify-center my-6'>
-                        <Link href={'https://hcj-online-code-editor.vercel.app/'} target='_blank' className='group hover:shadow-2xl text-center hover:shadow-green-700 hover:scale-105 hover:bg-blue-900 transition-all delay-75 bg-green-400 w-[100%] md:w-[50%] py-2 px-4 rounded-2xl cursor-pointer border '>
+                        <Link href={'https://hcj-online-code-editor.vercel.app/'} target='_blank' className='group hover:shadow-2xl text-center hover:shadow-purple-700 hover:scale-105 hover:bg-black transition-all delay-75 bg-purple-900 w-[100%] md:w-[50%] py-2 px-4 rounded-2xl cursor-pointer border '>
                             ورود به کد ادیتور
                         </Link>
                     </div>

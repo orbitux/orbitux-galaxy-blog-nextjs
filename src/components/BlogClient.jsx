@@ -41,7 +41,7 @@ const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
             <div className={`my-${my} text-white container mx-auto px-4 md:px-0`}>
                 <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
-                        <div className="md:h-10 h-5 w-1 bg-green-600"></div>
+                        <div className="md:h-10 h-5 w-1 bg-purple-900"></div>
                         <h4 className="text-4xl flex items-center">وبلاگ</h4>
                     </div>
                     <SearchInputUi/>
@@ -74,7 +74,7 @@ const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
                             onPageChange={handlePageClick}
                             containerClassName={"flex space-x-2 justify-center"}
                             pageClassName={"px-4 py-2 rounded-full cursor-pointer bg-gray-400 hover:bg-gray-300"}
-                            activeClassName={"bg-green-400 text-gray-950"}
+                            activeClassName={"bg-purple-950 text-white"}
                             previousClassName={"px-4 py-2 text-black rounded-full bg-gray-300 hover:bg-gray-400"}
                             nextClassName={"px-4 py-2 text-black rounded-full bg-gray-300 hover:bg-gray-400"}
                             disabledClassName={"opacity-50 cursor-not-allowed"}
