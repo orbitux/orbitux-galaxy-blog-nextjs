@@ -1,16 +1,20 @@
 import * as THREE from 'three'
-export function generateGalaxy({
-    count = 1000,
-    radius = 5,
-    branches = 5,
-    spin = 1,
-    randomness = 0.3,
-    randomnessPower = 3,
-    insideColor = "#ff66ff",
-    outSideColor = "#3c0366"
-}) {
+import { galaxyConfig } from './config'
+export function generateGalaxy() {
+    const {
+        count,
+        radius,
+        branches,
+        spin,
+        randomness,
+        randomnessPower,
+        insideColor,
+        outSideColor,
+    } = galaxyConfig
+
     const positions = new Float32Array(count * 3)
     const colors = new Float32Array(count * 3)
+    const scales = new Float32Array(count)
     const colorInside = new THREE.Color(insideColor)
     const colorOutside = new THREE.Color(outSideColor)
 
@@ -19,6 +23,7 @@ export function generateGalaxy({
         const r = Math.random() * radius
         const branchAngle = ((i % branches) / branches) * Math.PI * 2
         const spinAngle = r * spin
+        scales[i] = Math.random() * 0.8 + 0.2
         const randomX = Math.pow(Math.random(), randomnessPower) * (Math.random() < 0.5 ? -1 : 1)
             * randomness * r
 
@@ -40,6 +45,7 @@ export function generateGalaxy({
     }
     return {
         positions,
-        colors
+        colors,
+        scales
     }
 }
