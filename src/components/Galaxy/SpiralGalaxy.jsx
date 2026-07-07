@@ -5,9 +5,7 @@ import { useFrame } from '@react-three/fiber'
 const SpiralGalaxy = () => {
   const ref = useRef()
   const geometry = useMemo(() => {
-    const { positions, colors } = generateGalaxy({
-      count: 20000
-    })
+    const { positions, colors } = generateGalaxy()
     const geometry = new THREE.BufferGeometry()
     geometry.setAttribute(
       "position",
