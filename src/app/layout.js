@@ -10,7 +10,6 @@ import BlogClient from "@/components/BlogClient";
 import BlogContent from "@/components/BlogContent";
 import BlogPage from "./blog/page";
 
-
 export const metadata = {
     title: 'وبلاگ شخصی محمد تفقدی',
     description: 'وبسایت محمد تفقدی ',
@@ -24,19 +23,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
 
     return (
-            <html lang="en">
-                <link rel="icon" href="/fav.svg" type="image/x-icon" />
-                <body className="bg-black text-white shadow-border">
-                    <PostOptionProvider>
-                        <MenuProvider>
-                            <Navbar />
-                            <BreadCrumb />
-                            <Toaster position="top-center" reverseOrder={true} />
-                            {children}
-                            <Footer />
-                        </MenuProvider>
-                    </PostOptionProvider>
-                </body>
-            </html>
+        <html lang="en">
+            <link rel="icon" href="/fav.svg" type="image/x-icon" />
+            <body className="bg-black text-white shadow-border">
+                <PostOptionProvider>
+                    <MenuProvider>
+                        <Navbar />
+                        <BreadCrumb />
+                        <Toaster position="top-center" reverseOrder={true} />
+                        {children}
+                        <Footer />
+                    </MenuProvider>
+                </PostOptionProvider>
+            </body>
+        </html>
     );
 }

@@ -2,17 +2,24 @@
 'use client'
 import { Suspense, useEffect, useState } from "react"
 import { useSearchParams, useRouter } from 'next/navigation'
-import Skeleton from 'react-loading-skeleton'
+// import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import BlogContent from "@/components/BlogContent"
 import ReactPaginate from "react-paginate"
-import Head from 'next/head'
-import SearchBlog from "@/components/Search/SearchBlog"
+// import Head from 'next/head'
+// import SearchBlog from "@/components/Search/SearchBlog"
 import { FaArrowLeft } from "react-icons/fa6";
 import Link from "next/link"
-import SearchDialog from "./SearchDialog"
+// import SearchDialog from "./SearchDialog"
 import SearchInputUi from "./SearchInputUi"
+import dynamic from "next/dynamic"
 // import NotFound from "../not-found"
+// const Galaxy = dynamic(
+//     () => import("@/components/Galaxy/Galaxy"),
+//     {
+//         ssr: false
+//     }
+// )
 const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
     const searchParams = useSearchParams()
     const router = useRouter()
@@ -44,7 +51,7 @@ const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
                         <div className="md:h-10 h-5 w-1 bg-purple-900"></div>
                         <h4 className="text-4xl flex items-center">وبلاگ</h4>
                     </div>
-                    <SearchInputUi/>
+                    <SearchInputUi />
                     <Link prefetch href={'/blog'} className="flex items-center gap-2 group">
                         <span className="text-xl">همه مطالب</span>
                         <FaArrowLeft size={20} className="group-hover:-translate-x-1.5 transition-all" />

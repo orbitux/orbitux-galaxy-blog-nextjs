@@ -1,14 +1,13 @@
 .bg-header-dark {
     position: absolute;
-    width: 50%;
+    width: 100%;
     height: 100%;
     top: 0;
-    right: 25%;
     z-index: -999;
     border-radius: 100%;
     box-shadow: 0 0 20px 20px #3c0366;
     opacity: 0.3;
-    background-image: url('/assets/image/gif/daniele-levis-pelusi-nEczFlV-GMI-unsplash.jpg');
+    /* background-image: url('/assets/image/gif/daniele-levis-pelusi-nEczFlV-GMI-unsplash.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
 }
