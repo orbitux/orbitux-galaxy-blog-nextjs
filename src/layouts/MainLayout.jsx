@@ -16,7 +16,6 @@ const MainLayout = ({ children }) => {
         <OpenProvider>
             <div>
                 <Header />
-
                 <Order />
                 <CodeEditor />
                 <BlogLayout />

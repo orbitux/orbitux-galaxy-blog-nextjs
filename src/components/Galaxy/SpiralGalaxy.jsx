@@ -2,10 +2,11 @@ import React, { useMemo, useRef } from 'react'
 import { generateGalaxy } from './GalaxyGenerator'
 import * as THREE from 'three'
 import { useFrame } from '@react-three/fiber'
+import { fragmentShader, vertexShader } from './galaxyShaders'
 const SpiralGalaxy = () => {
   const ref = useRef()
   const geometry = useMemo(() => {
-    const { positions, colors } = generateGalaxy()
+    const { positions, colors, scales, randomValues, brightness } = generateGalaxy()
     const geometry = new THREE.BufferGeometry()
     geometry.setAttribute(
       "position",
@@ -14,6 +15,19 @@ const SpiralGalaxy = () => {
     geometry.setAttribute(
       "color",
       new THREE.Float32BufferAttribute(colors, 3)
+    )
+
+    geometry.setAttribute(
+      "aScale",
+      new THREE.Float32BufferAttribute(scales, 1)
+    )
+    geometry.setAttribute(
+      "aRandom",
+      new THREE.Float32BufferAttribute(randomValues, 1)
+    )
+    geometry.setAttribute(
+      "aBrightness",
+      new THREE.Float32BufferAttribute(brightness, 1)
     )
     geometry.computeBoundingSphere()
     return geometry
@@ -25,11 +39,13 @@ const SpiralGalaxy = () => {
   })
   return (
     <points ref={ref} geometry={geometry}>
-      <pointsMaterial
+      <shaderMaterial
+        vertexShader={vertexShader}
+        fragmentShader={fragmentShader}
         vertexColors
-        size={0.05}
-        sizeAttenuation
+        transparent
         depthWrite={false}
+        blending={THREE.AdditiveBlending}
       />
     </points>
   )

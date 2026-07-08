@@ -17,7 +17,8 @@ export function generateGalaxy() {
     const scales = new Float32Array(count)
     const colorInside = new THREE.Color(insideColor)
     const colorOutside = new THREE.Color(outSideColor)
-
+    const brightness = new Float32Array(count)
+    const randomValues = new Float32Array(count)
     for (let i = 0; i < count; i++) {
         const i3 = i * 3
         const r = Math.random() * radius
@@ -42,10 +43,15 @@ export function generateGalaxy() {
         colors[i3] = mixed.r
         colors[i3 + 1] = mixed.g
         colors[i3 + 2] = mixed.b
+
+        randomValues[i] = Math.random()
+        brightness[i] = 0.4 + Math.random() * 0.6
     }
     return {
         positions,
         colors,
-        scales
+        scales,
+        randomValues,
+        brightness
     }
 }
