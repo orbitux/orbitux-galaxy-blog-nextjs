@@ -1,5 +1,5 @@
 import React, { useMemo, useRef } from 'react'
-import { generateGalaxy } from '../generators/GalaxyGenerator'
+import { generateGalaxy } from '../generators/galaxyGenerator'
 import * as THREE from 'three'
 import { useFrame } from '@react-three/fiber'
 import { fragmentShader, vertexShader } from '../shaders/galaxyShaders'
