@@ -1,11 +1,11 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import SpiralGalaxy from "./SpiralGalaxy";
+import SpiralGalaxy from "./components/SpiralGalaxy";
 import '../../styles/header.css'
-import Stars from "./Stars";
-import Nebula from "./Nebula";
-import DustParticles from "./DustParticles";
+import Stars from "./components/Stars";
+import Nebula from "./components/Nebula";
+import DustParticles from "./components/DustParticles";
 export const Galaxy = () => {
     return (
         <div className="bg-header-dark">

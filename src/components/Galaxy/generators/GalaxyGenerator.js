@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import { galaxyConfig } from './config'
+import { galaxyConfig } from '../config'
 export function generateGalaxy() {
     const {
         count,
@@ -19,12 +19,18 @@ export function generateGalaxy() {
     const colorOutside = new THREE.Color(outSideColor)
     const brightness = new Float32Array(count)
     const randomValues = new Float32Array(count)
+    const coreStrengthArray = new Float32Array(count)
     for (let i = 0; i < count; i++) {
         const i3 = i * 3
         const r = Math.random() * radius
+        const coreStrength = Math.pow(
+            1 - r / radius,
+            2.5
+        )
+        coreStrengthArray[i] = coreStrength
         const branchAngle = ((i % branches) / branches) * Math.PI * 2
         const spinAngle = r * spin
-        scales[i] = Math.random() * 0.8 + 0.2
+        scales[i] = Math.random() * (1 + coreStrength * 2.5)
         const randomX = Math.pow(Math.random(), randomnessPower) * (Math.random() < 0.5 ? -1 : 1)
             * randomness * r
 
@@ -39,19 +45,23 @@ export function generateGalaxy() {
         positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * r + randomZ
         const mixed = colorInside.clone()
         mixed.lerp(colorOutside, r / radius)
-
+        mixed.lerp(
+            new THREE.Color("#fff"),
+            coreStrength * 0.6
+        )
         colors[i3] = mixed.r
         colors[i3 + 1] = mixed.g
         colors[i3 + 2] = mixed.b
 
         randomValues[i] = Math.random()
-        brightness[i] = 0.4 + Math.random() * 0.6
+        brightness[i] = 0.4 + Math.random() * 0.6 + coreStrength * 0.8
     }
     return {
         positions,
         colors,
         scales,
         randomValues,
-        brightness
+        brightness,
+        coreStrengthArray
     }
 }
