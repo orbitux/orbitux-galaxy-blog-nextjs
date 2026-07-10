@@ -6,6 +6,7 @@ import Stars from './components/Stars'
 import DustParticles from './components/DustParticles'
 import SpiralGalaxy from './components/SpiralGalaxy'
 import Effects from './effects/Effects'
+import ShootingStar from './components/ShootingStar'
 const GalaxyGroup = () => {
     const group = useRef()
     const { pointer } = useThree()
@@ -31,6 +32,7 @@ const GalaxyGroup = () => {
             <Stars count={1800} depth={40} size={0.08} />
             <DustParticles />
             <SpiralGalaxy />
+            <ShootingStar />
             <Effects />
         </group>
     )
