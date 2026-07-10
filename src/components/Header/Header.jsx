@@ -19,8 +19,8 @@ const Header = () => {
 
     return (
         <>
-            <Galaxy />
             <div className='w-full flex flex-col justify-evenly h-screen relative'>
+            <Galaxy />
                 {/* <div className='bg-header-dark'></div> */}
                 <div className='flex flex-col gap-10 items-center lg:gap-0 lg:flex-row lg:justify-between container mx-auto'>
                     <div className='lg:max-w-[60%] flex flex-col'>

@@ -10,7 +10,7 @@ import GalaxyGroup from "./components/GalaxyGroup";
 export const Galaxy = () => {
     return (
             <Canvas camera={{ position: [0, 2, 9], fov: 55 }}
-                style={{ pointerEvents: 'auto',height:'100vh' }}
+                style={{ pointerEvents: 'auto' }}
             >
                 <GalaxyGroup />
             </Canvas>

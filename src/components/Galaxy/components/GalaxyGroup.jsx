@@ -25,9 +25,9 @@ const GalaxyGroup = () => {
     return (
         <group ref={group}>
             <Nebula />
-            <Stars count={140000} radius={220} size={0.02} />
-            <Stars count={120000} radius={140} size={0.04} />
-            <Stars count={100000} radius={80} size={0.05} />
+            <Stars count={6000} depth={40} size={0.02} />
+            <Stars count={3500} depth={40} size={0.04} />
+            <Stars count={1800} depth={40} size={0.08} />
             <DustParticles />
             <SpiralGalaxy />
         </group>
