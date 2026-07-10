@@ -1,10 +1,11 @@
 import { useFrame, useThree } from '@react-three/fiber'
 import React, { useRef } from 'react'
 import * as THREE from 'three'
-import Nebula from './Nebula'
-import Stars from './Stars'
-import DustParticles from './DustParticles'
-import SpiralGalaxy from './SpiralGalaxy'
+import Nebula from './components/Nebula'
+import Stars from './components/Stars'
+import DustParticles from './components/DustParticles'
+import SpiralGalaxy from './components/SpiralGalaxy'
+import Effects from './effects/Effects'
 const GalaxyGroup = () => {
     const group = useRef()
     const { pointer } = useThree()
@@ -30,6 +31,7 @@ const GalaxyGroup = () => {
             <Stars count={1800} depth={40} size={0.08} />
             <DustParticles />
             <SpiralGalaxy />
+            <Effects />
         </group>
     )
 }

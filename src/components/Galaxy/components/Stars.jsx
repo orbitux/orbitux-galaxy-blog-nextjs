@@ -3,14 +3,14 @@ import * as THREE from "three"
 import { generateStars } from '../generators/starsGenerator'
 import { starFragmentShader, starVertexShader } from '../shaders/starShaders';
 import { useFrame } from '@react-three/fiber';
-const Stars = ({count = 3000, depth = 40}) => {
+const Stars = ({ count = 3000, depth = 40 }) => {
   const pointsRef = useRef()
 
 
 
   //-------geometry-------
   const geometry = useMemo(() => {
-    const { positions, colors, randomValues, scales } = generateStars(count, depth)
+    const { positions, colors, randomValues, scales, twinkleStrength } = generateStars(count, depth)
     const geometry = new THREE.BufferGeometry()
     geometry.setAttribute(
       "position",
@@ -27,6 +27,10 @@ const Stars = ({count = 3000, depth = 40}) => {
     geometry.setAttribute(
       "aRandom",
       new THREE.BufferAttribute(randomValues, 1)
+    )
+    geometry.setAttribute(
+      "aTwinkleStrength",
+      new THREE.BufferAttribute(twinkleStrength, 1)
     )
     return geometry
   }, [count, depth])

@@ -6,7 +6,7 @@ import '../../styles/header.css'
 import Stars from "./components/Stars";
 import Nebula from "./components/Nebula";
 import DustParticles from "./components/DustParticles";
-import GalaxyGroup from "./components/GalaxyGroup";
+import GalaxyGroup from "./GalaxyGroup";
 export const Galaxy = () => {
     return (
             <Canvas camera={{ position: [0, 2, 9], fov: 55 }}
