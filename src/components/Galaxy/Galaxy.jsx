@@ -8,10 +8,12 @@ import Nebula from "./components/Nebula";
 import DustParticles from "./components/DustParticles";
 import GalaxyGroup from "./GalaxyGroup";
 import CameraRig from "./components/CameraRig";
+import Header from "../Header/Header";
 export const Galaxy = () => {
     return (
         <Canvas camera={{ position: [0, 2, 9], fov: 55 }}
-            style={{ pointerEvents: 'auto' }}
+            dpr={[1, 2]}
+            style={{ pointerEvents: 'auto', height: '100vh',position:'absolute' }}
         >
             <CameraRig />
             <GalaxyGroup />

@@ -55,7 +55,7 @@ const Navbar = () => {
                     </ul>
                     <div className='flex gap-1'>
                         <div className='flex items-center gap-10'>
-                            <Link href={'https://github.com/root404-ir/personal-project-next'} target='_blank'>
+                            <Link href={'https://github.com/orbitux/personal-project-next'} target='_blank'>
                                 {/* <LuGithub className='text-3xl' /> */}
                                 <Lottie
                                     animationData={animationData}
@@ -67,7 +67,7 @@ const Navbar = () => {
 
                         </div>
                         <div>
-                            <Link href={'https://t.me/mtjsroot'} target='_blank'>
+                            <Link href={'https://t.me/orbituxdev'} target='_blank'>
                                 <Lottie
                                     animationData={animationTelegramIcon}
                                     style={{ width: '50px', height: '50px' }}

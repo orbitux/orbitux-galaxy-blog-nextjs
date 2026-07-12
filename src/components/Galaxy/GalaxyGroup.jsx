@@ -7,11 +7,13 @@ import DustParticles from './components/DustParticles'
 import SpiralGalaxy from './components/SpiralGalaxy'
 import Effects from './effects/Effects'
 import ShootingStar from './components/ShootingStar'
+import Header from '../Header/Header'
 const GalaxyGroup = () => {
     const group = useRef()
     const { pointer } = useThree()
     useFrame(() => {
         if (!group.current) return
+        if (document.hidden) return
 
         group.current.rotation.y = THREE.MathUtils.lerp(
             group.current.rotation.y,
@@ -32,7 +34,7 @@ const GalaxyGroup = () => {
             <Stars count={1800} depth={40} size={0.08} />
             <DustParticles />
             <SpiralGalaxy />
-            <ShootingStar />
+            {/* <ShootingStar />  using later */}
             <Effects />
         </group>
     )

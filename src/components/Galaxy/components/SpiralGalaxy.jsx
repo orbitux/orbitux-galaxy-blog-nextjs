@@ -37,6 +37,7 @@ const SpiralGalaxy = () => {
     return geometry
   }, [])
   useFrame((_, delta) => {
+    if (document.hidden) return
     if (ref.current) {
       ref.current.rotation.y += delta * 0.1
     }

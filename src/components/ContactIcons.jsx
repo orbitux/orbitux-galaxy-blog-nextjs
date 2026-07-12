@@ -29,17 +29,17 @@ const ContactIcons = () => {
     return (
         <>
             <div className="absolute left-[50] md:left-1 bottom-0 flex gap-10 my-5 md:top-10 z-10">
-                <Link href={'https://t.me/mtjsroot'}>
+                <Link href={'https://t.me/orbituxdev'}>
                     <div title="پیام در تلگرام" className={`telegram bg-white border border-gray-400 md:absolute md:left-1 md:top-1  flex justify-center items-center text-black rounded-full p-2`}>
                         <FaTelegramPlane className="text-2xl" />
                     </div>
                 </Link>
-                <Link href={'https://github.com/root404-ir'}>
+                <Link href={'https://github.com/orbitux'}>
                     <div title="گیت هاب" className={`github bg-white border border-gray-400   md:absolute md:left-1 md:top-1 flex justify-center items-center text-black rounded-full p-2`}>
                         <PiGithubLogoBold className="text-2xl" />
                     </div>
                 </Link>
-                <Link href={'https://t.me/mtjsbot_bot'}>
+                <Link href={'https://t.me/orbitux_bot'}>
                     <div title="ربات تلگرام" className={`telegram_bot bg-white border border-gray-400  md:absolute md:left-1 md:top-1 flex justify-center items-center text-black rounded-full p-2`}>
                         <FaRobot className="text-2xl" />
                     </div>

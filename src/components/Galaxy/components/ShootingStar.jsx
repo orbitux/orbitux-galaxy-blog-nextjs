@@ -8,6 +8,8 @@ const ShootingStar = () => {
     const tail = useRef()
     useFrame((state, delta) => {
         if (!ref.current || !tail.current) return
+        if (document.hidden) return
+
         const data = star.current
 
         data.position.add(

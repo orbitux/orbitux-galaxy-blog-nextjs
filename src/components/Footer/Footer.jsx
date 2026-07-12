@@ -21,7 +21,7 @@ const Footer = () => {
                     <ul className="flex gap-10 mt-10 md:text-4xl text-2xl">
                         <li>
                             <a
-                                href="https://github.com/root404-ir"
+                                href="https://github.com/orbitux"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="GitHub"
@@ -31,7 +31,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="https://t.me/root404"
+                                href="https://t.me/orbituxdev"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Telegram"
@@ -41,7 +41,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="https://t.me/mtjsBot"
+                                href="https://t.me/orbitux_bot"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Telegram Bot"

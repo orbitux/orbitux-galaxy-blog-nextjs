@@ -8,6 +8,7 @@ const DustParticles = () => {
     const { positions, scales } = generateDust()
     useFrame((state, delta) => {
         if (!ref.current) return
+        if (document.hidden) return
         material.uniforms.uTime.value = state.clock.elapsedTime
         ref.current.rotation.y += delta * 0.0025
         ref.current.rotation.x += delta * 0.0008

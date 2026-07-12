@@ -12,6 +12,13 @@
     background-size: cover;
 }
 
+.header {
+    background: linear-gradient(to right,
+            rgba(3, 0, 20, 0.3),
+            rgba(3, 0, 20, 0.6),
+            transparent);
+}
+
 @keyframes rotateicons {
     0% {
         transform: rotate(0deg);

@@ -1,3 +1,4 @@
+'use client'
 import React, { useMemo, useRef } from 'react'
 import * as THREE from "three"
 import { generateStars } from '../generators/starsGenerator'
@@ -54,6 +55,7 @@ const Stars = ({ count = 3000, depth = 40 }) => {
 
   //-------animation-------
   useFrame((state) => {
+    if (document.hidden) return
     material.uniforms.uTime.value = state.clock.elapsedTime
   })
   return (

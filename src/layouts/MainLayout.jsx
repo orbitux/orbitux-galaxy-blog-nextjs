@@ -7,6 +7,7 @@ import BlogPage from "@/app/blog/page"
 import BlogLayout from "./BlogLayout"
 import CodeEditor from "@/components/CodeEditor"
 import { OpenProvider } from "@/contexts/OpenDialogContext"
+import { Galaxy } from "@/components/Galaxy/Galaxy"
 
 
 const MainLayout = ({ children }) => {
@@ -15,6 +16,7 @@ const MainLayout = ({ children }) => {
     return (
         <OpenProvider>
             <div>
+                <Galaxy />
                 <Header />
                 <Order />
                 <CodeEditor />

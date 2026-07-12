@@ -1,16 +1,18 @@
 "use client"
+import { useMouse } from '@/hooks/useMouse'
 import { useFrame, useThree } from '@react-three/fiber'
 import React from 'react'
 import * as THREE from 'three'
 const CameraRig = () => {
-    const { camera, pointer } = useThree()
+    const mouse = useMouse()
+    const { camera, pointer, viewport } = useThree()
     const target = new THREE.Vector3()
     useFrame((state) => {
         const time = state.clock.elapsedTime
         const breathingX = Math.sin(time * 0.15) * 0.26
         const breathingY = Math.cos(time * 0.18) * 0.15
-        const targetX = pointer.x * 2 + breathingX
-        const targetY = pointer.y * 1.2 + breathingY
+        const targetX = mouse.current.x * 2
+        const targetY = mouse.current.y * 1.2
         camera.position.x = THREE.MathUtils.lerp(
             camera.position.x,
             targetX,
