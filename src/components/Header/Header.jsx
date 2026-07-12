@@ -18,8 +18,12 @@ const Header = () => {
     }, [])
 
     return (
-        <>
+        <div>
             <div className='header w-full flex flex-col justify-evenly h-screen relative'>
+                <p className='text-center opacity-60a'>
+                    <span className='text-purple-400 font-mono'>Galaxy Version : </span>
+                    <span>1.0.0</span>
+                </p>
                 <div className='flex flex-col gap-10 items-center lg:gap-0 lg:flex-row lg:justify-between container mx-auto'>
                     <div className=' lg:max-w-[60%] flex flex-col'>
                         <p id='header-text' className='lg:text-4xl text-2xl text-center leading-20 md:text-right'></p>
@@ -32,7 +36,7 @@ const Header = () => {
                     {/* <Icons /> */}
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
