@@ -6,8 +6,6 @@ import { IoIosArrowBack } from "react-icons/io"
 
 const BlogContent = ({ post }) => {
 
-  const summary = post.description.slice(0,10) + '...'
-  console.log(post)
   return (
     <>
       <div>
@@ -25,7 +23,7 @@ const BlogContent = ({ post }) => {
               <h4 className="text-3xl hover:text-blue-400">{post.title}</h4>
             </Link>
             <p>
-              {summary}
+              {post}
             </p>
             <div className="flex justify-between">
               <span>توسط : <span className="text-purple-900 font-bold">{post.author}</span></span>

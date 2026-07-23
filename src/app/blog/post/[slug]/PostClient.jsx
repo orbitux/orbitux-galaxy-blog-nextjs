@@ -38,7 +38,7 @@ const PostClient = ({ post }) => {
             <PostShare url={typeof window !== "undefined" ? window.location.href : pathname} title={post.title} />
             <PostOptions />
             <Scroll />
-            <div onClick={handleToTop} className="bg-green-400 cursor-pointer rounded-sm p-1 my-10 flex justify-center">
+            <div onClick={handleToTop} className="bg-purple-400 cursor-pointer rounded-sm p-1 my-10 flex justify-center">
                 <div className="flex items-center gap-2 text-lg">
                     <span className="select-none">رفتن به بالای پست</span>
                     <AiOutlineToTop size={43} />

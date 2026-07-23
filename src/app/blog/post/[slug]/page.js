@@ -11,7 +11,6 @@ export default async function PostPage({ params }) {
     return (
         <div>
             <PostClient post={post} />
-            {/* <PostContentRender content={post.content} /> */}
         </div>
     )
 }

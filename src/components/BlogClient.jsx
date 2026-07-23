@@ -63,7 +63,7 @@ const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
 
                     {currentPost.map(post => {
                         return (
-                            <BlogContent post={post} key={post.slug} />
+                            <BlogContent post={post} key={post.slug}/>
                         )
                     })}
                 </div>
