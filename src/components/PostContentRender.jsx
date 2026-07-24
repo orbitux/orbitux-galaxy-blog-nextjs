@@ -2,9 +2,11 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import Prose from "./Prose"
 import { mdxOptions } from "@/lib/mdx";
 import CodeBlock from "./MDX/CodeBlock";
+import Callout from "./MDX/Callout";
 export default function PostContentRender({ content, post }) {
     const component = {
-        pre: CodeBlock
+        pre: CodeBlock,
+        Callout
     }
 
     return (
