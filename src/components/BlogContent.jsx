@@ -23,7 +23,7 @@ const BlogContent = ({ post }) => {
               <h4 className="text-3xl hover:text-blue-400">{post.title}</h4>
             </Link>
             <p>
-              {post}
+              {post.description}
             </p>
             <div className="flex justify-between">
               <span>توسط : <span className="text-purple-900 font-bold">{post.author}</span></span>
