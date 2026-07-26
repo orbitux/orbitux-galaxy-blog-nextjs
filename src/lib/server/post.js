@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-
+import { extractHeadings } from './headings'
 const POSTS_PATH = path.join(process.cwd(), "src/content")
 
 export function getAllPosts() {
@@ -22,7 +22,7 @@ export function getPostsBySlug(slug) {
         const source = fs.readFileSync(path.join(POSTS_PATH, file), "utf-8")
         const { data, content } = matter(source)
         if (data.slug === slug) {
-            return { frontMatter: data, content }
+            return { frontMatter: data, content,headings:extractHeadings(content) }
         }
     }
     return null

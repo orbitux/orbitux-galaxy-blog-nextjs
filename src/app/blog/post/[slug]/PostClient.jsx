@@ -11,30 +11,24 @@ import PostShare from '@/components/PostShare';
 import Scroll from '@/components/Scroll';
 import { AiOutlineToTop } from 'react-icons/ai';
 import PostContentRender from '@/components/PostContentRender';
+import TableOfContents from '@/components/Blog/TableOfContents';
 
 const PostClient = ({ post }) => {
     const handleToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }
-    const { fontWeight, lineSpacing, fontSize } = useContext(PostOptionContext);
+    // const { fontWeight, lineSpacing, fontSize } = useContext(PostOptionContext);
     const pathname = usePathname();
     return (
         <div key={post.frontMatter.slug} className="container mx-auto px-2 mt-10">
-            <div className="prose porse-lg mt-10 text-white px-10" style={{ fontWeight, lineHeight: lineSpacing }}>
-                <PostContentRender content={post.content} post={post} />
+            <div className='flex gap-4'>
+                <main className="flex-1 prose porse-lg mt-10 text-white px-10">
+                    <PostContentRender content={post.content} post={post} />
+                </main>
+                <aside className='w-[200px] hidden xl:block xl:col-span-3 '>
+                    <TableOfContents headings={post.headings} />
+                </aside>
             </div>
-
-
-            {/* <span className="text-md text-gray-400">{JalaliDate(post.fields.date)}</span> */}
-            {/* <div className="flex justify-between items-center">
-                <h1 className="text-xl md:text-3xl font-bold mb-2">{post.frontMatter.title}</h1>
-                <div className="flex flex-col items-center">
-                    <p className="text-sm md:text-md mb-4">نویسنده: {post.frontMatter.author}</p>
-                </div>
-            </div>
-            <img id="content" src={post.frontMatter.thumb} loading="lazy" alt={post.frontMatter.title} className="rounded-xl mb-4 object-contain mt-5 mx-auto" width={800} height={400} />
-            <p style={{ fontWeight: fontWeight, fontSize: fontSize }}>{post.frontMatter.description}</p>
-            <p style={{ fontWeight: fontWeight, lineHeight: lineSpacing, fontSize: fontSize }}>{post.content}</p> */}
             <PostShare url={typeof window !== "undefined" ? window.location.href : pathname} title={post.title} />
             <PostOptions />
             <Scroll />
@@ -60,3 +54,19 @@ export default PostClient
 
 
 {/* <span className="text-md text-gray-400">{JalaliDate(post.fields.date)}</span> */ }
+
+
+
+
+{/* <span className="text-md text-gray-400">{JalaliDate(post.fields.date)}</span> */ }
+{/* <div className="flex justify-between items-center">
+                <h1 className="text-xl md:text-3xl font-bold mb-2">{post.frontMatter.title}</h1>
+                <div className="flex flex-col items-center">
+                    <p className="text-sm md:text-md mb-4">نویسنده: {post.frontMatter.author}</p>
+                </div>
+            </div>
+            <img id="content" src={post.frontMatter.thumb} loading="lazy" alt={post.frontMatter.title} className="rounded-xl mb-4 object-contain mt-5 mx-auto" width={800} height={400} />
+            <p style={{ fontWeight: fontWeight, fontSize: fontSize }}>{post.frontMatter.description}</p>
+            <p style={{ fontWeight: fontWeight, lineHeight: lineSpacing, fontSize: fontSize }}>{post.content}</p> */}
+
+// style={{ fontWeight, lineHeight: lineSpacing }}

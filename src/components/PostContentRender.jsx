@@ -3,6 +3,8 @@ import Prose from "./Prose"
 import { mdxOptions } from "@/lib/mdx";
 import CodeBlock from "./MDX/CodeBlock";
 import Callout from "./MDX/Callout";
+import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
 export default function PostContentRender({ content, post }) {
     const component = {
         pre: CodeBlock,
@@ -15,7 +17,10 @@ export default function PostContentRender({ content, post }) {
             <h1 className="text-xl md:text-3xl font-bold mb-2">{post.frontMatter.title}</h1>
             <img id="content" src={post.frontMatter.thumb} loading="lazy" alt={post.frontMatter.title} className="rounded-xl mb-4 object-contain mt-5 mx-auto" width={800} height={400} />
             <MDXRemote source={content} components={component} options={{
-                mdxOptions
+                mdxOptions: {
+                    remarkPlugins: [remarkGfm],
+                    rehypePlugins: [rehypeSlug]
+                }
             }} />
         </Prose>
     )

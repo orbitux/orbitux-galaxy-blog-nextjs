@@ -3,7 +3,6 @@ import CopyCodeBtn from './CopyCodeBtn'
 
 const CodeBlock = ({ children }) => {
     const text = children.props.children
-    console.log(children);
     return (
         <div className="relative my-8">
             <CopyCodeBtn text={text.trim()} />
