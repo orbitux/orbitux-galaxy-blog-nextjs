@@ -1,6 +1,8 @@
+import { useActiveHeadings } from '@/hooks/useActiveHeading'
 import React from 'react'
 
 const TableOfContents = ({ headings }) => {
+    const activeId = useActiveHeadings(headings)
     return (
         <div className='border fixed border-purple-600/50 rounded-xl p-4'>
             <h3 className='mb-4 text-xl font-bold'>فهرست مطالب</h3>
@@ -16,9 +18,14 @@ const TableOfContents = ({ headings }) => {
                         }}
 
                         style={{ marginRight: (item.level - 1) * 16 }}
-                        className='cursor-pointer'
+                        className={`cursor-pointer relative transition-all ${activeId === item.id ? 'text-purple-400 font-semibold' : 'text-zinc-400 hover:text-white'}`}
                     >
-                        {item.text}
+                        <span
+                            className={`absolute right-0 top-0 h-full w-1 rounded-full ${activeId === item.id ? 'bg-purple-600' : 'bg-transparent'}`}
+                        />
+                        <span style={{ paddingRight: (item.level - 1) * 18 + 12 }}>
+                            {item.text}
+                        </span>
                     </li>
                 ))}
             </ul>
