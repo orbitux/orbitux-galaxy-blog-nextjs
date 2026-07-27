@@ -24,6 +24,46 @@ body {
     font-family: kalameh-num;
 }
 
+figure[data-rehype-pretty-code-figure] {
+    margin: 2rem 0;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgb(63, 63, 70);
+}
+
+pre[data-theme] {
+    overflow-x: auto;
+    padding: 1.25rem;
+}
+
+code[data-theme] {
+    counter-reset: line;
+}
+
+code[data-theme] [data-line] {
+    counter-increment: line;
+    padding: 0 0.75rem;
+}
+
+code[data-theme] [data-line]::before {
+    content: counter(line);
+    color: rgb(113, 113, 122);
+    padding-right: 1rem;
+    width: 2rem;
+    text-align: left;
+    user-select: none;
+}
+
+.highlighted {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.word {
+    background: rgba(34, 197, 94, 25);
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
 .bg-contact-night {
     --s: 150px;
     /* control the size*/
@@ -40,12 +80,12 @@ body {
 }
 
 .shiki {
-  background-color: #2e3440;
-  border-radius: 8px;
-  padding: 1rem;
-  font-family: 'Fira Code', monospace;
-  font-size: 0.875rem;
-  overflow-x: auto;
+    background-color: #2e3440;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    overflow-x: auto;
 }
 
 /* ---break---*/
@@ -169,13 +209,15 @@ body {
 /* ---break---*/
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+
+    body {
+        @apply bg-background text-foreground;
     }
-  html {
-    @apply font-sans;
+
+    html {
+        @apply font-sans;
     }
 }
