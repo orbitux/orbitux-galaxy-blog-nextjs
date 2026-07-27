@@ -1,5 +1,5 @@
 'use client'
-import { Link2 } from 'lucide-react'
+import { Code2, Link2 } from 'lucide-react'
 import React, { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 
@@ -29,7 +29,7 @@ const Heading = ({ as: Tag, id, children, className = "" }) => {
                 </span>
             </Tag>
             <Toaster toastOptions={{
-                icon: <Link2 />
+                icon: <Code2 />
             }} />
         </>
     )
