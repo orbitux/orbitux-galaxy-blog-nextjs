@@ -90,15 +90,11 @@ export default function Prose({ children }) {
 
               [&_tbody_tr:nth-child(even)]:bg-zinc-900/40
 
-              [&_pre]:bg-[#0f172a]
-                [&_pre]:rounded-xl
-                [&_pre]:p-5
-                [&_pre]:overflow-x-auto
-                [&_pre]:text-left
-                [&_pre]:my-8
+              [&_pre]:overflow-x-auto
+              [&_pre]:my-8
 
-                [&_code]:font-mono
-                [&_code]:text-green-300
+                // [&_code]:font-mono
+                // [&_code]:text-green-300
 
                 [&_p_code]:bg-zinc-800
                 [&_p_code]:px-1.5
