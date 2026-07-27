@@ -22,12 +22,12 @@ const PostClient = ({ post }) => {
     return (
         <div key={post.frontMatter.slug} className="container mx-auto px-2 mt-10">
             <div className='flex gap-4'>
-                <main className="flex-1 prose porse-lg mt-10 text-white px-10">
-                    <PostContentRender content={post.content} post={post} />
-                </main>
                 <aside className='w-[200px] hidden xl:block xl:col-span-3 '>
                     <TableOfContents headings={post.headings} />
                 </aside>
+                <main className="flex-1 prose porse-lg mt-10 text-white px-10">
+                    <PostContentRender content={post.content} post={post} />
+                </main>
             </div>
             <PostShare url={typeof window !== "undefined" ? window.location.href : pathname} title={post.title} />
             <PostOptions />

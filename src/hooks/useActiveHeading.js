@@ -8,6 +8,7 @@ export const useActiveHeadings = (headings) => {
 
     useEffect(() => {
 
+
         if (!headings?.length) return;
 
         const elements = headings

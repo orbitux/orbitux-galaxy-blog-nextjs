@@ -4,7 +4,7 @@ import React from 'react'
 const TableOfContents = ({ headings }) => {
     const activeId = useActiveHeadings(headings)
     return (
-        <div className='border fixed border-purple-600/50 rounded-xl p-4'>
+        <div className='border sticky top-24 overflow-y-auto border-purple-600/50 rounded-xl p-4'>
             <h3 className='mb-4 text-xl font-bold'>فهرست مطالب</h3>
             <ul className='space-y-3'>
                 {headings.map(item => (

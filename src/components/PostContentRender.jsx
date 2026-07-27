@@ -5,10 +5,17 @@ import CodeBlock from "./MDX/CodeBlock";
 import Callout from "./MDX/Callout";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
+import Heading from '@/components/MDX/Heading'
 export default function PostContentRender({ content, post }) {
     const component = {
         pre: CodeBlock,
-        Callout
+        Callout,
+        h1: (props) => <Heading as='h1' {...props} />,
+        h2: (props) => <Heading as='h2' {...props} />,
+        h3: (props) => <Heading as='h3' {...props} />,
+        h4: (props) => <Heading as='h4' {...props} />,
+        h5: (props) => <Heading as='h5' {...props} />,
+        h6: (props) => <Heading as='h6' {...props} />
     }
 
     return (
