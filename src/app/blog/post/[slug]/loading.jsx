@@ -2,8 +2,6 @@
 import React from 'react'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import loadingPost from '@/components/lottieIcons/loading.json'
-import Lottie from 'lottie-react'
 const Loading = () => {
   return (
     <>
