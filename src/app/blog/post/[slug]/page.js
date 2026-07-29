@@ -2,8 +2,9 @@ import { notFound } from "next/navigation";
 import PostClient from "./PostClient";
 import { getPostsBySlug } from "@/lib/server/post";
 import PostContentRender from "@/components/PostContentRender";
+import CodeCopyButtons from "@/components/MDX/CodeCopyButtons";
 export default async function PostPage({ params }) {
-    const {slug} = await params
+    const { slug } = await params
     const post = getPostsBySlug(slug)
     if (!post) {
         return <h1>Post Not Found</h1>
@@ -11,6 +12,7 @@ export default async function PostPage({ params }) {
     return (
         <div>
             <PostClient post={post} />
+            <CodeCopyButtons />
         </div>
     )
 }
