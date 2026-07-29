@@ -6,9 +6,7 @@ import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/NavBar/Navbar";
 import BreadCrumb from "@/components/BreadCrumb";
 import { Toaster } from "react-hot-toast";
-import BlogClient from "@/components/BlogClient";
-import BlogContent from "@/components/BlogContent";
-import BlogPage from "./blog/page";
+
 
 export const metadata = {
     title: 'وبلاگ شخصی محمد تفقدی',
@@ -21,7 +19,6 @@ export const metadata = {
     },
 };
 export default function RootLayout({ children }) {
-
     return (
         <html lang="en">
             <link rel="icon" href="/fav.svg" type="image/x-icon" />
