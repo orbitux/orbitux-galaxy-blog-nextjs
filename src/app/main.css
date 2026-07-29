@@ -24,11 +24,50 @@ body {
     font-family: kalameh-num;
 }
 
+figure {
+    text-align: left;
+}
+
 figure[data-rehype-pretty-code-figure] {
     margin: 2rem 0;
     overflow: hidden;
     border-radius: 16px;
     border: 1px solid rgb(63, 63, 70);
+}
+
+figure[data-rehype-pretty-code-figure] figcaption {
+    gap: 2rem;
+    padding: 0.75rem 1rem;
+    background: rgb(24, 24, 27);
+    border-bottom: 1px solid rgb(63, 63, 70);
+    color: rgb(212, 212, 216);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.code-lang-file {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: row-reverse;
+    gap: 2rem;
+}
+
+.code-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.code-actions {
+    display: flex;
+    justify-content: start;
+}
+
+figure[data-rehype-pretty-code-figure] pre {
+    margin: 0;
+    padding: 1rem 0;
+    overflow-x: auto;
 }
 
 pre[data-theme] {
@@ -52,6 +91,24 @@ code[data-theme] [data-line]::before {
     width: 2rem;
     text-align: left;
     user-select: none;
+}
+
+.code-title {
+    color: #e4e4e7;
+}
+
+.code-title:empty {
+    display: none;
+}
+
+.code-language {
+    border: 1px solid rgb(63, 63, 70);
+    background: #27272a;
+    padding: 0.15rem 0.6rem;
+    border-radius: 0.45rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #4ade80;
 }
 
 .highlighted {
