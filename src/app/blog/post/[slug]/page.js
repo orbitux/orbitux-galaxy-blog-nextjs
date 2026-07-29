@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import PostClient from "./PostClient";
 import { getPostsBySlug } from "@/lib/server/post";
 import PostContentRender from "@/components/PostContentRender";
-import CodeCopyButtons from "@/components/MDX/CodeCopyButtons";
+import CodeCopyButtons from "@/components/MDX/Code/CodeCopyButtons";
 export default async function PostPage({ params }) {
     const { slug } = await params
     const post = getPostsBySlug(slug)
