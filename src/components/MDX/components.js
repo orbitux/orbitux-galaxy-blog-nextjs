@@ -3,7 +3,6 @@ import Callout from './Callout'
 import Heading from './Heading'
 
 const components = {
-    pre: CodeBlock,
     Callout,
     h1: (props) => <Heading as='h1' {...props} />,
     h2: (props) => <Heading as='h2' {...props} />,

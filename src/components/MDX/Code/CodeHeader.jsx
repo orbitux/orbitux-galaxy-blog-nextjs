@@ -14,7 +14,7 @@ const CodeHeader = ({ language, filename, target }) => {
                 )}
                 <LanguageBadge language={language} />
             </div>
-            <CopyButton target={target} />
+            {/* <CopyButton target={target} /> */}
         </div>
     )
 }
