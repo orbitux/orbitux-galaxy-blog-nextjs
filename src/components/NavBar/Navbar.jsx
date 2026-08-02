@@ -12,6 +12,11 @@ import Lottie from 'lottie-react';
 import animationData from '../../lordIcons/wired-lineal-2572-logo-github-hover-pinch.json'
 import animationTelegramIcon from '../../lordIcons/wired-lineal-2559-logo-telegram-hover-pinch.json'
 import animationEditorPage from '../../lordIcons/wired-lineal-1326-command-window-line-hover-blinking.json'
+import { FaTelegram } from 'react-icons/fa';
+import { VscEditorLayout } from 'react-icons/vsc';
+import { Code2 } from 'lucide-react';
+import { DiGithub, DiGithubBadge } from 'react-icons/di';
+import { PiGithubLogo } from 'react-icons/pi';
 const Navbar = () => {
     const [isNavFixed, setIsNavFixed] = useState(false)
     const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext)
@@ -53,34 +58,22 @@ const Navbar = () => {
                     <ul className='lg:flex hidden gap-10 '>
                         <Menu />
                     </ul>
-                    <div className='flex gap-1'>
+                    <div className='flex gap-3'>
                         <div className='flex items-center gap-10'>
                             <Link href={'https://github.com/orbitux/personal-project-next'} target='_blank'>
                                 {/* <LuGithub className='text-3xl' /> */}
-                                <Lottie
-                                    animationData={animationData}
-                                    loop={true}
-                                    size={200}
-                                    style={{ width: '50px', height: '50px' }}
-                                />
+                                <PiGithubLogo size={32}/>
                             </Link>
 
                         </div>
                         <div>
                             <Link href={'https://t.me/orbituxdev'} target='_blank'>
-                                <Lottie
-                                    animationData={animationTelegramIcon}
-                                    style={{ width: '50px', height: '50px' }}
-
-                                />
+                                <FaTelegram size={32}/>
                             </Link>
                         </div>
                         <div>
                             <Link href={'https://hcj-online-code-editor.vercel.app/'} target='_blank'>
-                                <Lottie
-                                    animationData={animationEditorPage}
-                                    style={{ width: '50px', height: '50px' }}
-                                />
+                                <Code2 size={32}/>
                             </Link>
                         </div>
                     </div>
