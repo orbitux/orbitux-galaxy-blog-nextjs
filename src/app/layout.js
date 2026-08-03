@@ -6,30 +6,33 @@ import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/NavBar/Navbar";
 import BreadCrumb from "@/components/BreadCrumb";
 import { Toaster } from "react-hot-toast";
+import { OpenProvider } from "@/contexts/OpenDialogContext";
 
 
 export const metadata = {
-    title: 'وبلاگ شخصی محمد تفقدی',
-    description: 'وبسایت محمد تفقدی ',
+    title: 'orbitux blog',
+    description: 'the personal orbitux website',
     verification: {
         google: 'YqRFW-zvQbF2eLCVZlaIVRjbXI932nrXpls25hlBKEM',
     },
     icons: {
-        icon: '/fav.svg',
+        icon: '/orb3.png',
     },
 };
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <link rel="icon" href="/fav.svg" type="image/x-icon" />
+            <link rel="icon" href="/orb3.png" type="image/png" />
             <body className="bg-black text-white shadow-border">
                 <PostOptionProvider>
                     <MenuProvider>
-                        <Navbar />
-                        <BreadCrumb />
-                        <Toaster position="top-center" reverseOrder={true} />
-                        {children}
-                        <Footer />
+                        <OpenProvider>
+                            <Navbar />
+                            <BreadCrumb />
+                            <Toaster position="top-center" reverseOrder={true} />
+                            {children}
+                            <Footer />
+                        </OpenProvider>
                     </MenuProvider>
                 </PostOptionProvider>
             </body>
