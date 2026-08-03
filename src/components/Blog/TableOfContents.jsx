@@ -17,13 +17,11 @@ const TableOfContents = ({ headings }) => {
                             })
                         }}
 
-                        style={{ marginRight: (item.level - 1) * 16 }}
+                        style={{ marginRight: (item.level - 1) * 20 }}
                         className={`cursor-pointer relative transition-all ${activeId === item.id ? 'text-purple-400 font-semibold' : 'text-zinc-400 hover:text-white'}`}
                     >
-                        <span
-                            className={`absolute right-0 top-0 h-full w-1 rounded-full ${activeId === item.id ? 'bg-purple-600' : 'bg-transparent'}`}
-                        />
-                        <span style={{ paddingRight: (item.level - 1) * 18 + 12 }}>
+                        <div className={`absolute right-0 top-0 h-full w-1 rounded-full ${activeId === item.id ? 'bg-purple-600' : 'bg-transparent'}`} />
+                        <span style={{ paddingRight: (item.level - 1) * 12 }}>
                             {item.text}
                         </span>
                     </li>
