@@ -62,18 +62,18 @@ const Navbar = () => {
                         <div className='flex items-center gap-10'>
                             <Link href={'https://github.com/orbitux/personal-project-next'} target='_blank'>
                                 {/* <LuGithub className='text-3xl' /> */}
-                                <PiGithubLogo size={32}/>
+                                <PiGithubLogo className='xl:w-[32px] xl:h-[32px] w-[24px] h-[24px]'/>
                             </Link>
 
                         </div>
                         <div>
                             <Link href={'https://t.me/orbituxdev'} target='_blank'>
-                                <FaTelegram size={32}/>
+                                <FaTelegram className='xl:w-[32px] xl:h-[32px] w-[24px] h-[24px]'/>
                             </Link>
                         </div>
                         <div>
-                            <Link href={'https://hcj-online-code-editor.vercel.app/'} target='_blank'>
-                                <Code2 size={32}/>
+                            <Link href={'https://editor.orbitux.space'} target='_blank'>
+                                <Code2 className='xl:w-[32px] xl:h-[32px] w-[24px] h-[24px]'/>
                             </Link>
                         </div>
                     </div>
