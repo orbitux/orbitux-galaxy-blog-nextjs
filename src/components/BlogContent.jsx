@@ -5,11 +5,10 @@ import { JalaliDate } from "./Date"
 import { IoIosArrowBack } from "react-icons/io"
 
 const BlogContent = ({ post }) => {
-
   return (
     <>
-      <div>
-        <div key={post.slug} className="border flex flex-col justify-between h-auto border-gray-600 rounded-lg">
+      <div key={post.slug}>
+        <div className="border flex flex-col justify-between h-auto border-gray-600 rounded-lg">
           <div className="bg-white rounded-t-lg">
             <img
               src={post.thumb}
@@ -23,11 +22,11 @@ const BlogContent = ({ post }) => {
               <h4 className="text-3xl hover:text-blue-400">{post.title}</h4>
             </Link>
             <p>
-              {post.description}
+              {post.description.slice(0, 100) + "..."}
             </p>
             <div className="flex justify-between">
               <span>توسط : <span className="text-purple-900 font-bold">{post.author}</span></span>
-              {/* <span>{JalaliDate(post.fields.data)}</span> */}
+              <span className='fanum'>{JalaliDate(post.date)}</span>
             </div>
           </div>
           <Link prefetch href={`/blog/post/${post.slug}`} className="bg-purple-900 p-0 w-full text-white font-bold rounded-b-lg mt-5 cursor-pointer flex items-center justify-center gap-2 hover:bg-white hover:text-purple-900 transition-all">
