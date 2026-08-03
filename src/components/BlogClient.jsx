@@ -23,14 +23,18 @@ import dynamic from "next/dynamic"
 const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
     const searchParams = useSearchParams()
     const router = useRouter()
+    const [showText, setShowText] = useState(false)
     const pageFromURL = parseInt(searchParams.get('page') || '1')
     const [currentPage, setCurrentPage] = useState(pageFromURL - 1)
     const postsPerPage = 10
-    console.count('Blog render')
     useEffect(() => {
         setCurrentPage(pageFromURL - 1)
     }, [pageFromURL])
-
+    useEffect(() => {
+        if (window.location.pathname === "/") {
+            setShowText(true)
+        }
+    }, [showText])
     const handlePageClick = (e) => {
         const newPage = e.selected + 1
         const params = new URLSearchParams(searchParams.toString())
@@ -44,18 +48,20 @@ const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
 
     return (
         <>
-
             <div className={`my-${my} text-white container mx-auto px-4 md:px-0`}>
                 <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
                         <div className="md:h-10 h-5 w-1 bg-purple-900"></div>
-                        <h4 className="text-4xl flex items-center">وبلاگ</h4>
+                        <h4 className="xl:text-4xl text-2xl flex items-center">وبلاگ</h4>
                     </div>
+
                     <SearchInputUi />
-                    <Link prefetch href={'/blog'} className="flex items-center gap-2 group">
-                        <span className="text-xl">همه مطالب</span>
-                        <FaArrowLeft size={20} className="group-hover:-translate-x-1.5 transition-all" />
-                    </Link>
+                    {showText && (
+                        <Link prefetch href={'/blog'} className="flex items-center gap-2 group">
+                            <span className="xl:text-xl">همه مطالب</span>
+                            <FaArrowLeft size={20} className="group-hover:-translate-x-1.5 transition-all" />
+                        </Link>
+                    )}
 
                 </div>
 
@@ -63,7 +69,7 @@ const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
 
                     {currentPost.map(post => {
                         return (
-                            <BlogContent post={post} key={post.slug}/>
+                            <BlogContent post={post} content={post.content} />
                         )
                     })}
                 </div>
@@ -82,8 +88,8 @@ const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
                             containerClassName={"flex space-x-2 justify-center"}
                             pageClassName={"px-4 py-2 rounded-full cursor-pointer bg-gray-400 hover:bg-gray-300"}
                             activeClassName={"bg-purple-950 text-white"}
-                            previousClassName={"px-4 py-2 text-black rounded-full bg-gray-300 hover:bg-gray-400"}
-                            nextClassName={"px-4 py-2 text-black rounded-full bg-gray-300 hover:bg-gray-400"}
+                            previousClassName={"px-4 py-2 text-black cursor-pointer rounded-full bg-gray-300 hover:bg-gray-400"}
+                            nextClassName={"px-4 py-2 text-black cursor-pointer rounded-full bg-gray-300 hover:bg-gray-400"}
                             disabledClassName={"opacity-50 cursor-not-allowed"}
                         />
                     </div>
