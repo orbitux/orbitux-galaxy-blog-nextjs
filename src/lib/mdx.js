@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
 import { h } from "hastscript"
 const options = {
-    theme: 'tokyo-night',
+    theme: 'night-owl',
     keepBackground: false,
     defaultLang: "plaintext",
     grid: true,
