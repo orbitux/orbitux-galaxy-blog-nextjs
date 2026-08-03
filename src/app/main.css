@@ -29,6 +29,8 @@ figure {
 }
 
 figure[data-rehype-pretty-code-figure] {
+    direction: ltr;
+    text-align: left;
     margin: 2rem 0;
     overflow: hidden;
     border-radius: 16px;
@@ -80,18 +82,18 @@ code[data-theme] {
 }
 
 code[data-theme] [data-line] {
-    counter-increment: line;
     padding: 0 0.75rem;
 }
 
-code[data-theme] [data-line]::before {
+/* Uncomment if you are using line number */
+/* code[data-theme] [data-line]::before {
     content: counter(line);
     color: rgb(113, 113, 122);
     padding-right: 1rem;
     width: 2rem;
     text-align: left;
     user-select: none;
-}
+} */
 
 .code-title {
     color: #e4e4e7;
