@@ -14,18 +14,16 @@ const MainLayout = ({ children }) => {
     // const { setIsMenuOpen } = useContext(MenuContext)
     // className="fanum" onClick={() => setIsMenuOpen(false)}
     return (
-        <OpenProvider>
-            <div>
-                <Galaxy />
-                <Header />
-                <Order />
-                <CodeEditor />
-                <BlogLayout />
-                <main>
-                    {children}
-                </main>
-            </div>
-        </OpenProvider>
+        <div>
+            <Galaxy />
+            <Header />
+            <Order />
+            <CodeEditor />
+            <BlogLayout />
+            <main>
+                {children}
+            </main>
+        </div>
     )
 }
 
