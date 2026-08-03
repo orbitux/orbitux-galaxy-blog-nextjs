@@ -6,7 +6,6 @@ import { useContext, useState } from "react";
 // import { GetThumbnail } from '@/components/PostThumbnail';
 // import { JalaliDate } from '@/components/Date';
 // import { PostContentRender } from '@/components/PostContentRender';
-import PostOptions from '@/components/PostOptions';
 import PostShare from '@/components/PostShare';
 import Scroll from '@/components/Scroll';
 import { AiOutlineToTop } from 'react-icons/ai';
@@ -17,12 +16,11 @@ const PostClient = ({ post }) => {
     const handleToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }
-    // const { fontWeight, lineSpacing, fontSize } = useContext(PostOptionContext);
     const pathname = usePathname();
     return (
         <div key={post.frontMatter.slug} className="container mx-auto px-2 mt-10">
-            <div className='flex gap-4'>
-                <aside className='w-[200px] hidden xl:block xl:col-span-3 '>
+            <div className='xl:flex xl:gap-4'>
+                <aside className='w-[220px] hidden xl:block xl:col-span-3 '>
                     <TableOfContents headings={post.headings} />
                 </aside>
                 <main className="flex-1 prose porse-lg mt-10 text-white px-10">
@@ -30,7 +28,6 @@ const PostClient = ({ post }) => {
                 </main>
             </div>
             <PostShare url={typeof window !== "undefined" ? window.location.href : pathname} title={post.title} />
-            <PostOptions />
             <Scroll />
             <div onClick={handleToTop} className="bg-purple-400 cursor-pointer rounded-sm p-1 my-10 flex justify-center">
                 <div className="flex items-center gap-2 text-lg">
