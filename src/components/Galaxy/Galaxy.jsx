@@ -14,6 +14,7 @@ export const Galaxy = () => {
         <Canvas camera={{ position: [0, 2, 9], fov: 55 }}
             dpr={[1, 2]}
             style={{ pointerEvents: 'auto', height: '100vh',position:'absolute' }}
+            className="hidden xl:inline-block"
         >
             <CameraRig />
             <GalaxyGroup />
