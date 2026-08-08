@@ -1,8 +1,10 @@
 import CodeBlock from './Code'
 import Callout from './Callout'
 import Heading from './Heading'
+import CodeGroup from './Code/CodeGroup'
 
 const components = {
+    CodeGroup,
     Callout,
     h1: (props) => <Heading as='h1' {...props} />,
     h2: (props) => <Heading as='h2' {...props} />,
