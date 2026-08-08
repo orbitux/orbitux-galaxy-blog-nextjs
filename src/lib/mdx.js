@@ -4,6 +4,8 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
 import { h } from "hastscript"
+import remarkCodeGroup from "@/components/MDX/Code/remarkCodeGroup";
+import remarkDirective from "remark-directive";
 const options = {
     theme: 'night-owl',
     keepBackground: false,
@@ -92,7 +94,7 @@ const rehypeCodeHeader = () => {
     }
 }
 export const mdxOptions = {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkDirective, remarkCodeGroup, remarkGfm],
     rehypePlugins: [
         rehypeSlug,
         [rehypePrettyCode, options],
