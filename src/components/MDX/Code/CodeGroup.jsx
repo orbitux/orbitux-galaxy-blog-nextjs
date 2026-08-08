@@ -1,9 +1,11 @@
 'use client'
 import React, { Children, cloneElement, useState } from 'react'
 import CodeTabs from './CodeTabs'
+import { useCodeGroup } from './CodeGroupProvider'
 
 const CodeGroup = ({ tabs, children }) => {
-    const [activeTab, setActiveTab] = useState(0)
+    const { preferredTab, setPreferredTab } = useCodeGroup()
+    const activeTab = preferredTab ?? 0
     const codes = Children.toArray(children)
     const activeCode = cloneElement(
         codes[activeTab],
@@ -15,7 +17,7 @@ const CodeGroup = ({ tabs, children }) => {
     const parsedTabs = typeof tabs === "string" ? JSON.parse(tabs) : tabs
     return (
         <div className='my-6 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950'>
-            <CodeTabs activeTab={activeTab} setActiveTab={setActiveTab} parsedTabs={parsedTabs} />
+            <CodeTabs activeTab={activeTab} setActiveTab={setPreferredTab} parsedTabs={parsedTabs} />
             {activeCode}
         </div>
     )
