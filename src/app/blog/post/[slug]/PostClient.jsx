@@ -3,14 +3,12 @@ import React from 'react'
 import { PostOptionContext } from "@/contexts/PostOptionContext";
 import { useParams, usePathname } from "next/navigation";
 import { useContext, useState } from "react";
-// import { GetThumbnail } from '@/components/PostThumbnail';
-// import { JalaliDate } from '@/components/Date';
-// import { PostContentRender } from '@/components/PostContentRender';
 import PostShare from '@/components/PostShare';
 import Scroll from '@/components/Scroll';
 import { AiOutlineToTop } from 'react-icons/ai';
 import PostContentRender from '@/components/PostContentRender';
 import TableOfContents from '@/components/Blog/TableOfContents';
+import { CodeGroupProvider } from '@/components/MDX/Code/CodeGroupProvider';
 
 const PostClient = ({ post }) => {
     const handleToTop = () => {
@@ -24,7 +22,9 @@ const PostClient = ({ post }) => {
                     <TableOfContents headings={post.headings} />
                 </aside>
                 <main className="flex-1 prose porse-lg mt-10 text-white px-10">
-                    <PostContentRender content={post.content} post={post} />
+                    <CodeGroupProvider>
+                        <PostContentRender content={post.content} post={post} />
+                    </CodeGroupProvider>
                 </main>
             </div>
             <PostShare url={typeof window !== "undefined" ? window.location.href : pathname} title={post.title} />
