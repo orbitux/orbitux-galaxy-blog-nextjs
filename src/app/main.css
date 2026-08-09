@@ -36,11 +36,13 @@ figure[data-rehype-pretty-code-figure] {
     border-radius: 16px;
     border: 1px solid rgb(63, 63, 70);
 }
+
 .prose table {
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
 }
+
 figure[data-rehype-pretty-code-figure] figcaption {
     gap: 2rem;
     padding: 0.75rem 1rem;
@@ -61,8 +63,17 @@ figure[data-rehype-pretty-code-figure] figcaption {
 
 .code-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    column-gap: 10px;
+}
+
+.header-file {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row-reverse;
 }
 
 .code-actions {
