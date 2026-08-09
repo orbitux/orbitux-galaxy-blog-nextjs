@@ -74,19 +74,41 @@ const rehypeCodeHeader = () => {
                         ),
                         h(
                             "div",
-                            { className: "code-lang-file" },
-                            [
-                                h(
-                                    "span",
-                                    {
-                                        className: "code-language",
-                                    },
-                                    language.toUpperCase()
-                                ),
-                                h("span", { className: "code-title" }, title),
-                            ]
+                            {className:'header-file'},
+                            h(
+                                "div",
+                                { className: "code-lang-file" },
+                                [
+                                    h(
+                                        "span",
+                                        {
+                                            className: "code-language",
+                                        },
+                                        language.toUpperCase()
+                                    ),
+                                    // Uncoment this line if you are using show filename
+                                    // h("span", { className: "code-title" }, title),
+                                ]
+                            ),
+                            h(
+                                "div",
+                                { className: "flex items-center gap-1.5" },
+                                [
+                                    h(
+                                        "span",
+                                        { className: "size-2.5 rounded-full bg-red-400" },
+                                    ),
+                                    h(
+                                        "span",
+                                        {className: "size-2.5 rounded-full bg-yellow-400"}
+                                    ),
+                                    h(
+                                        "span",
+                                        {className:"size-2.5 rounded-full bg-green-400"}
+                                    )
+                                ]
+                            ),
                         ),
-
                     ]
                 )
             ]
