@@ -4,10 +4,26 @@ import { motion } from 'motion/react'
 const CodeTabs = ({ parsedTabs, activeTab, setActiveTab }) => {
 
     return (
-        <div dir='ltr' className='flex items-center gap-1 px-3 py-2 bg-zinc-900 border border-zinc-800 rounded-t-xl'>
+        <div dir='ltr' className='
+        absolute 
+        xl:left-[35%] 
+        xl:md
+        xl:w-fit 
+        xl:px-3 
+        xl:py-2
+        left-0
+        -top-7
+        md:top-0
+        justify-center
+        w-full 
+        flex 
+        items-center 
+        gap-1 
+        border-zinc-800 
+        xl:rounded-xl'>
             {parsedTabs.map((tab, index) => (
                 <motion.button key={index} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setActiveTab(index)}
-                    className={`relative px-4 py-2 text-sm transition-all rounded-md
+                    className={`relative shrink-0 md:px-4 md:py-2 px-2 py-1 text-sm transition-all rounded-md
                         ${activeTab === index ? 'text-white bg-zinc-800' : 'text-zinc-400 hover:text-white'} `}
                 >
                     {tab.title}
