@@ -3,6 +3,7 @@ import React from 'react'
 const LanguageBadge = ({ language }) => {
     if (!language) return null
     return (
+
         <span className='
         rounded-md
         border
@@ -14,9 +15,7 @@ const LanguageBadge = ({ language }) => {
         text-sm
         font-medium
         uppercase
-        tracking-wide
-
-        '>
+        tracking-wide'>
             {language}
         </span>
     )
