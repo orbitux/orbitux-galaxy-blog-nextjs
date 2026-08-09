@@ -2,6 +2,7 @@
 import React, { Children, cloneElement, useState } from 'react'
 import CodeTabs from './CodeTabs'
 import { useCodeGroup } from './CodeGroupProvider'
+import CodeBlock from './CodeBlock'
 
 const CodeGroup = ({ tabs, children }) => {
     const { preferredTab, setPreferredTab } = useCodeGroup()
@@ -16,9 +17,10 @@ const CodeGroup = ({ tabs, children }) => {
         })
     const parsedTabs = typeof tabs === "string" ? JSON.parse(tabs) : tabs
     return (
-        <div className='my-6 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950'>
+        <div className='my-10 relative'>
             <CodeTabs activeTab={activeTab} setActiveTab={setPreferredTab} parsedTabs={parsedTabs} />
             {activeCode}
+                 
         </div>
     )
 }
