@@ -1,0 +1,219 @@
+---
+title: "دانلود و نصب تم گراب orbitux"
+slug: "orbitux-grub-theme"
+description: "دانلود و نصب تم اختصاصی گراب orbitux توضیحات لازم و نحوه نصب"
+thumb: "/thumbnail/orbitux.png"
+author: "orbitux"
+---
+
+# دانلود و نصب تم گراب orbitux
+
+سلام خدمت تمامی کاربران گرامی . در این پست سعی داریم نحوه نصب صحیح تم گراب orbitux را خدمت شما عزیزان آموزش بدیم.
+
+در این مطلب یاد میگیریم : 
+
+- تم گراب چیست
+- نحوه دانلود تم
+- اجزای سازنده تم گراب
+- نحوه نصب و کانفیگ گراب در توزیع های مختلف لینوکس
+
+
+## تم گراب چیست؟
+
+در حالت عادی شما وقتی لینوکسی نصب میکنید مثل اوبونتو گراب هم همراهش نصب میشه تا اگر سیستم عامل دیگه ای داشته باشید بتونید به راحتی از منوی گراب وارد سیستم عامل مورد نظر خودتون بشید.
+اما این گرابی که نصب میشه به صورت پیشفرض در اکثر توزیع های لینوکسی تم خاصی نداره و یک تم ساده با پس زمینه سیاه داره که شاید زیاد جالب نباشه و خسته کننده باشه.
+
+حال , گراب این امکان رو به ما داده تا بتونیم تم های اختصاصی مطابق با سلیقه خودمون توسعه بدیم که از این رو در استور های مختلف لینوکسی مانند gnome-look , kde store و غیره...
+بتونیم تم های مدنظر خودمان را انتخاب و نصب کنیم و شخصی سازی های دلخواه را روش انجام بدیم.
+
+یک نمونه از تم پیشفرض گراب : 
+
+![alt text](/post_images/orbitux-grub-theme/images.png)
+
+یک نمونه از تم شخصی سازی شده orbitux 
+
+![alt text](/post_images/orbitux-grub-theme/main.jpg) 
+![alt text](/post_images/orbitux-grub-theme/screenshot.png)
+
+شما میتوانید در فایلی که در ادامه دریافت میکنید تمام شخصی سازی های ممکن را انجام دهید.
+
+در ادامه میریم سراغ دانلود فایل تم
+
+## دانلود فایل تم
+
+ابتدا فایل تم رو از آدرس های دانلود کنید : 
+
+- open desktop : https://www.opendesktop.org/p/2369405
+- github : https://github.com/orbitux/orbitux-grub-theme
+
+در صورتی که از گیت هاب دانلود میکنید : 
+‍
+
+```bash
+git clone https://github.com/orbitux/orbitux-grub-theme.git
+```
+
+در صورتی که از opendesktop دانلود میکنید ابتدا باید فایل zip را استخراج کنیم : 
+
+```bash
+unzip orbitux-grub-theme-v0.3.0.zip
+```
+
+بعد از اینکه با موفقیت دانلود شد وارد دایرکتوری پروژه میشویم 
+
+
+```bash
+cd ~/orbitux-grub-theme
+```
+
+و یک بررسی برای اینکه تمامی فایل ها موجود باشند 
+
+```bash
+ls
+```
+این فایل ها باشن وگرنه پروژه به صورت ناقص دانلود شده 
+
+- arrow_w.png  
+- background.png   
+- icons  
+- LICENSE  
+- orbitux-Regular-22.pf2  
+- README.md  
+- screenshot.png  
+- theme.txt
+
+
+## اجزای سازنده تم گراب
+
+- theme.txt
+- orbitux-Regular-22.pf2
+- icons
+- background.png
+- arrow_w.png
+- screenshot.png
+- LICENSE
+- README.md
+
+| نام فایل | کاربرد |
+| ----- | -------|
+| theme.txt | فایل اصلی حاوی استایل های گراب شامل: پس زمینه, اندازه ها, رنگ ها, و غیره... | 
+| orbitux-Regular-22.pf2 | فونت اصلی به کار رفته در تم | 
+| icons | آیکون های سیستم عامل ها و توزیع های لینوکسی که کنار اسم هر توزیع ضاهر میشود | 
+| background.png | پس زمینه اصلی گراب | 
+| arrow_w.png | آیکون فلش , زمانی که هر آیتم انتخاب شود نمایان میشود | 
+| screenshot.png | پیش نمایش تم | 
+| LICENSE | مربوط به لایسنس پروژه و قوانین استفاده از آن | 
+| README.md | داکیومنت پروژه شامل : نحوه نصب , اجزای فایل ها , امکانات , و کاستوم کردن آن 
+
+خب حالا که با اجزای تم بیشتر آشنا شدیم میریم سراغ بخش بعدی یعنی نصب تم و کانفیگ گراب 
+
+## نحوه نصب و کانفیگ گراب در توزیع های مختلف لینوکس
+
+## 1- ساخت دایرکتوری تم
+
+```bash
+sudo mkdir -p /boot/grub/themes/orbitux
+```
+
+2- وارد دایرکتوری پروژه میشویم
+
+```bash
+cd ~/orbitux-grub-theme
+```
+
+3- کپی تم در دایرکتوری که در مرحله اول ساختیم 
+
+```bash
+sudo cp -r ./* /boot/grub/themes/orbitux/
+```
+
+## 4- تنظیمات فایل گراب
+
+فایل تنظیمات گراب را باز میکنیم : 
+
+```bash
+sudo nano /etc/default/grub
+```
+
+<Callout type="info">
+
+  ما اینجا از ادیتور nano استفاده کردیم. شما میتوانید با هر ادیتوری که راحتید فایل رو باز کنید
+
+</Callout>
+
+در فایل ```/etc/default/grub``` دنبال خط ```GRUB_THEME``` بگردید یا اگر نیست اضافه کنید به این صورت 
+
+آدرس تم رو بهش میدیم 
+
+```
+GRUB_THEME="/boot/grub/themes/orbitux/theme.txt"
+```
+<Callout type="info">
+
+  در برخی توزیع های لینوکس مثل فدورا به جای ```grub``` از ```grub2``` استفاده میکنیم پس حتما این نکترو به خاطر داشته باشید
+  
+</Callout>
+
+
+حالا فایل رو سیو میکنیم و برمیگردیم به ترمینال خودمون  و میریم سراغ مرحله بعد 
+
+## 5- Regenerate کردن گراب
+
+این مرحله بسته به توزیع لینوکسی دستورات متفاوتی داره که تقریبا برای اکثر توزیع ها این ۳ دستور استفاده میشه:
+
+```‍grub-mkconfig```
+
+```grub2-mkconfig```
+
+```update-grub```
+
+در ادامه نحوه صحیح generate کردن گراب رو باهم بررسی میکنیم : 
+
+Arch Linux / Manjaro or other
+
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+Debian/Ubuntu and derivatives
+
+```bash
+sudo update-grub
+```
+
+Fedora/RedHat bases
+
+```bash
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+```
+
+<Callout type="info">
+  لطفا در توزیع لینوکسی خودتان هر ۳ دستور بالارو امتحان کنید ممکن هست برای هر توزیع متفاوت باشه 
+</Callout>
+
+وقتی که دستورات بالارو زدین باید چیزی شبیه به این روی صفحه ترمینال مشاهده کنید 
+
+
+```
+Generating grub configuration file ...
+Found theme: /boot/grub/themes/orbitux/theme.txt
+Found linux image: /boot/vmlinuz-6.12-x86_64
+Found initrd image: /boot/intel-ucode.img /boot/amd-ucode.img /boot/initramfs-6.12-x86_64.img
+Found initrd fallback image: /boot/initramfs-6.12-x86_64-fallback.img
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Found Windows 11 on /dev/sda1
+Found Pop!_OS 22.04 LTS (22.04) on /dev/sdb1
+Adding boot menu entry for UEFI Firmware Settings ...
+Root filesystem isn't btrfs
+If you think an error has occurred, please file a bug report at "https://github.com/Antynea/grub-btrfs"
+Found memtest86+ image: /boot/memtest86+/memtest.bin
+Found memtest86+ EFI image: /boot/memtest86+/memtest.efi
+done
+```
+و این قسمت رو اگر مشاهده کردین ```Found theme: /boot/grub/themes/orbitux/theme.txt``` تبریک میگم تم ما با موفقیت نصب شده
+
+حالا سیستم خودتون رو ری استارت کنید و از تم نصب شده لذت ببرید !
+
+در صورت مشکلی در نصب و دانلود یا سوالات مرتبط لطفا در <a href="https://t.me/orbitux" target="_blank">تلگرام</a> پیام بگذارید.
+
