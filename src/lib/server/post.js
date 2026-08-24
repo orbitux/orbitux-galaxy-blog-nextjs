@@ -9,7 +9,6 @@ export function getAllPosts() {
     return files.map(file => {
         const source = fs.readFileSync(path.join(POSTS_PATH, file), "utf-8")
         const { data, content } = matter(source)
-        console.log("DATA:", data);
         return {
             ...data
         }
