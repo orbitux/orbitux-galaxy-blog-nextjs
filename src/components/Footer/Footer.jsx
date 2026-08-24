@@ -31,7 +31,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <a
-                                href="https://t.me/orbituxdev"
+                                href="https://t.me/orbitux"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Telegram"
