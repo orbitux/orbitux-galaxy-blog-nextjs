@@ -33,7 +33,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className=' w-full px-4'>
-                    {/* <Icons /> */}
+                    <Icons />
                 </div>
             </div>
         </div>
