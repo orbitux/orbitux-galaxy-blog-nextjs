@@ -28,7 +28,8 @@ const GalaxyGroup = () => {
     })
     return (
         <group ref={group}>
-            <Nebula />
+            {/* uncomment Nebula if you are using it. */}
+            {/* <Nebula /> */}
             <Stars count={6000} depth={40} size={0.02} />
             <Stars count={3500} depth={40} size={0.04} />
             <Stars count={1800} depth={40} size={0.08} />
