@@ -7,25 +7,11 @@ import { useState } from 'react';
 import ContactIcons from '@/components/ContactIcons';
 import { ContactPreLoader } from '@/components/PreLoader';
 import Head from 'next/head';
-// import ReCAPTCHA from 'react-google-recaptcha';
-
-
-// const SITE_KEY = '6Le_biUrAAAAAPHoz2QuQwo-gQ_1sZyh3jOI3rRi'
 
 const Contact = () => {
-  // const [recaptchaValue, setRecaptchaValue] = useState(null)
   const [messageLoading, setMessageLoading] = useState(false)
   const handleSubmit = (values, { resetForm }) => {
-    // if (!recaptchaValue) {
-    //   Swal.fire({
-    //     position: "center",
-    //     icon: "error",
-    //     title: "لطفا تیک من ربات نیستم را بزنید",
-    //     showConfirmButton: true,
-    //     timer: 3500
-    //   });
-    //   return
-    // }
+
     const templateParams = {
       name: values.name,
       email: values.email,
@@ -91,12 +77,6 @@ const Contact = () => {
                   <Field as='textarea' type="text" id="message" name="message" className='border pr-3 py-1 focus:shadow-2xl focus:shadow-purple-500 transition-all border-gray-400 rounded-sm' />
                   <ErrorMessage name='message' component="div" className='text-red-500' />
                 </div>
-                {/* <div className='mt-10'>
-                <ReCAPTCHA
-                  sitekey={SITE_KEY}
-                  onChange={(value) => setRecaptchaValue(value)}
-                />
-              </div> */}
                 <div className='flex justify-center'>
                   <button type='submit' disabled={messageLoading} className={`${messageLoading ? 'cursor-not-allowed opacity-50' : 'cursor-pointer hover:-translate-y-2 hover:bg-black'} mt-5 bg-purple-700 flex items-center px-5 py-2 rounded-md text-white transition-all`}>
                     {messageLoading ? 'در حال ارسال پیام ...' : 'ارسال پیام'}
