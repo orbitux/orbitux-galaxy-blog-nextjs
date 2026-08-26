@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import { PostOptionContext } from "@/contexts/PostOptionContext";
 import { useParams, usePathname } from "next/navigation";
 import { useContext, useState } from "react";
@@ -9,30 +9,43 @@ import { AiOutlineToTop } from 'react-icons/ai';
 import PostContentRender from '@/components/PostContentRender';
 import TableOfContents from '@/components/Blog/TableOfContents';
 import { CodeGroupProvider } from '@/components/MDX/Code/CodeGroupProvider';
+import { Moon, Sun } from 'lucide-react';
+import { useDark } from '@/contexts/DarkModeContext';
 
 const PostClient = ({ post }) => {
+    const { darkmode, setDarkMode } = useDark()
+
+
     const handleToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }
     const pathname = usePathname();
     return (
-        <div key={post.frontMatter.slug} className="container mx-auto px-2 mt-10">
-            <div className='xl:flex xl:gap-4'>
-                <aside className='w-[220px] hidden xl:block xl:col-span-3 '>
-                    <TableOfContents headings={post.headings} />
-                </aside>
-                <main className="flex-1 prose porse-lg mt-10 text-white px-10">
-                    <CodeGroupProvider>
-                        <PostContentRender content={post.content} post={post} />
-                    </CodeGroupProvider>
-                </main>
-            </div>
-            <PostShare url={typeof window !== "undefined" ? window.location.href : pathname} title={post.title} />
-            <Scroll />
-            <div onClick={handleToTop} className="bg-purple-400 cursor-pointer rounded-sm p-1 my-10 flex justify-center">
-                <div className="flex items-center gap-2 text-lg">
-                    <span className="select-none">رفتن به بالای پست</span>
-                    <AiOutlineToTop size={43} />
+        <div className={`${darkmode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+            <div key={post.frontMatter.slug} className={`container mx-auto ${darkmode && 'px-2 mt-10'}`}>
+                <div className='xl:flex xl:gap-4'>
+                    <aside className='w-[220px] hidden xl:block xl:col-span-3 '>
+                        <TableOfContents headings={post.headings} />
+                    </aside>
+                    <main className="flex-1 prose porse-lg mt-10 text-white px-10">
+                        <CodeGroupProvider>
+                            <PostContentRender content={post.content} post={post} />
+                        </CodeGroupProvider>
+                    </main>
+                    <div onClick={() => setDarkMode(!darkmode)}>
+                        {darkmode ? (<Sun size={32} />) : (
+                            <Moon size={32} />
+                        )}
+                    </div>
+
+                </div>
+                <PostShare url={typeof window !== "undefined" ? window.location.href : pathname} title={post.title} />
+                <Scroll />
+                <div onClick={handleToTop} className="bg-purple-400 cursor-pointer rounded-sm p-1 my-10 flex justify-center">
+                    <div className="flex items-center gap-2 text-lg">
+                        <span className="select-none">رفتن به بالای پست</span>
+                        <AiOutlineToTop size={43} />
+                    </div>
                 </div>
             </div>
         </div>

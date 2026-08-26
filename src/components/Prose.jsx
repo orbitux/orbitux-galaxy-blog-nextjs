@@ -1,10 +1,13 @@
+import { useDark } from "@/contexts/DarkModeContext"
+
 export default function Prose({ children }) {
+    const { darkmode } = useDark()
     return (
         <article
             className={`
                 mx-auto
                 max-w-4xl
-                text-gray-300
+                ${darkmode ? 'text-gray-300' : 'text-black'}
 
                 [&>*]:scroll-mt-24
 
@@ -13,26 +16,26 @@ export default function Prose({ children }) {
                 [&_h1]:mt-10
                 [&_h1]:mb-6
                 [&_h1]:leading-14
-                [&_h1]:text-white
+                [&_h1]:${darkmode ? 'text-white' : 'text-black'}
 
                 [&_h2]:text-3xl
                 [&_h2]:font-bold
                 [&_h2]:mt-12
                 [&_h2]:mb-5
-                [&_h2]:text-white
+                [&_h2]:${darkmode ? 'text-white' : 'text-black'}
 
                 [&_h3]:text-2xl
                 [&_h3]:font-semibold
                 [&_h3]:mt-10
                 [&_h3]:mb-4
-                [&_h3]:text-white
+                [&_h3]:${darkmode ? 'text-white' : 'text-black'}
 
                 [&_p]:leading-9
                 [&_p]:mb-6
                 [&_p]:text-lg
 
                 [&_strong]:font-semibold
-                [&_strong]:text-white
+                [&_strong]:${darkmode ? 'text-white' : 'text-black'}
 
                 [&_em]:italic
 
@@ -77,7 +80,7 @@ export default function Prose({ children }) {
                 [&_table]:border-collapse
                 [&_table]:my-8
 
-                [&_thead]:bg-zinc-900
+                [&_thead]:${darkmode ? 'bg-zinc-900' : 'bg-zinc-600'}
 
                 [&_th]:border
                 [&_th]:border-zinc-700

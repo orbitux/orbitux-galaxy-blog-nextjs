@@ -1,5 +1,6 @@
 'use client'
 
+import { useDark } from '@/contexts/DarkModeContext'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -15,6 +16,7 @@ const breadcrumbLabels = {
     contact: 'تماس با من'
 }
 const BreadCrumb = () => {
+    const {darkmode} = useDark()
     const pathname = usePathname() || '/'
     const pathName = pathname.split('/').filter(Boolean)
     if (pathName.length === 0) return null
@@ -22,7 +24,7 @@ const BreadCrumb = () => {
         return breadcrumbLabels[slug] || formatSlug(slug)
     }
     return (
-        <nav className="text-sm flex justify-center my-4">
+        <nav className={`text-sm flex justify-center ${!darkmode && 'bg-white'}`}>
             <ul className="flex flex-wrap items-center gap-2 text-gray-600">
                 <li>
                     <Link href="/">خانه</Link>
@@ -33,7 +35,7 @@ const BreadCrumb = () => {
                     const isLast = index === pathName.length - 1
                     return (
                         <li key={to} className="flex items-center gap-1">
-                            <span className='text-lg mx-'>{'>'}</span>
+                            <span className='text-lg'>{'>'}</span>
                             {isLast ? (
                                 <>
                                     <span className="text-gray-500">{label}</span>

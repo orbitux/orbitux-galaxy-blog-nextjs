@@ -1,8 +1,10 @@
+import { useDark } from '@/contexts/DarkModeContext'
 import { useActiveHeadings } from '@/hooks/useActiveHeading'
 import React from 'react'
 
 const TableOfContents = ({ headings }) => {
     const activeId = useActiveHeadings(headings)
+    const { darkmode,setDarkMode } = useDark()
     return (
         <div className='border sticky top-24 overflow-y-auto border-purple-600/50 rounded-xl p-4'>
             <h3 className='mb-4 text-xl font-bold'>فهرست مطالب</h3>
@@ -21,7 +23,7 @@ const TableOfContents = ({ headings }) => {
                         className={`cursor-pointer relative transition-all ${activeId === item.id ? 'text-purple-400 font-semibold' : 'text-zinc-400 hover:text-white'}`}
                     >
                         <div className={`absolute right-0 top-0 h-full w-1 rounded-full ${activeId === item.id ? 'bg-purple-600' : 'bg-transparent'}`} />
-                        <span style={{ paddingRight: (item.level - 1) * 12 }}>
+                        <span className={`${darkmode ? 'text-white' : 'text-black'}`} style={{ paddingRight: (item.level - 1) * 12 }}>
                             {item.text}
                         </span>
                     </li>

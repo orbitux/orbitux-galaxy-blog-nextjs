@@ -7,6 +7,7 @@ import Navbar from "@/components/NavBar/Navbar";
 import BreadCrumb from "@/components/BreadCrumb";
 import { Toaster } from "react-hot-toast";
 import { OpenProvider } from "@/contexts/OpenDialogContext";
+import { DarkModeProvider } from "@/contexts/DarkModeContext";
 
 
 export const metadata = {
@@ -27,11 +28,13 @@ export default function RootLayout({ children }) {
                 <PostOptionProvider>
                     <MenuProvider>
                         <OpenProvider>
-                            <Navbar />
-                            <BreadCrumb />
-                            <Toaster position="top-center" reverseOrder={true} />
-                            {children}
-                            <Footer />
+                            <DarkModeProvider>
+                                <Navbar />
+                                <BreadCrumb />
+                                <Toaster position="top-center" reverseOrder={true} />
+                                {children}
+                                <Footer />
+                            </DarkModeProvider>
                         </OpenProvider>
                     </MenuProvider>
                 </PostOptionProvider>
