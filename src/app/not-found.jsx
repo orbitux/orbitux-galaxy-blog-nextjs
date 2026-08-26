@@ -9,8 +9,8 @@ export default function NotFound() {
         { title: 'تماس', href: '/contact' },
     ]
     return (
-        <div className="bg-blue-950 flex flex-col my-10 items-center gap-8 justify-center p-6">
-            <h1 className="text-9xl font-bold text-green-600 mb-4 hover:text-blue-600 transition-all">404</h1>
+        <div className="bg-purple-900 flex flex-col my-10 items-center gap-8 justify-center p-6">
+            <h1 className="text-9xl font-bold text-green-600 mb-4 hover:text-purple-600 transition-all">404</h1>
             <h2 className="text-2xl font-semibold text-gray-400 mb-2">صفحه پیدا نشد</h2>
             <p className="text-gray-200 mb-6 text-center">
                 متأسفیم، صفحه‌ای که دنبالش بودید وجود ندارد یا ممکن است حذف شده باشد.
