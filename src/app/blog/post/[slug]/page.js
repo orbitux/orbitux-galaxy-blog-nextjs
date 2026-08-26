@@ -19,6 +19,21 @@ export const generateMetadata = async ({ params }) => {
         description: frontMatter.description,
         alternates: {
             canonical: `${baseUrl}/blog/post/${frontMatter.slug}`
+        },
+        openGraph: {
+            type: "article",
+            title: frontMatter.title,
+            description: frontMatter.description,
+            url: `${baseUrl}/blog/post/${frontMatter.slug}`,
+            siteName: "Orbitux",
+            images: [
+                {
+                    url: "/orb3.png",
+                    width: 1200,
+                    height: 630,
+                    alt: frontMatter.title
+                }
+            ]
         }
     }
 }

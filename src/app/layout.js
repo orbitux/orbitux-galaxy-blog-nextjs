@@ -38,6 +38,21 @@ export const metadata = {
     robots: {
         index: true,
         follow: true
+    },
+    openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: "https://orbitux.space",
+        siteName: "Orbitux",
+        description: "Orbitux Blog — مقالات و آموزش‌های برنامه‌نویسی، لینوکس، وب و تکنولوژی.",
+        images: [
+            {
+                url: "/orb3.png",
+                width: 512,
+                height: 512,
+                alt: "Orbitux"
+            }
+        ]
     }
 };
 export default function RootLayout({ children }) {
