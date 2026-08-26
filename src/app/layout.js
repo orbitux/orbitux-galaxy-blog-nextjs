@@ -11,19 +11,39 @@ import { DarkModeProvider } from "@/contexts/DarkModeContext";
 
 
 export const metadata = {
-    title: 'orbitux blog',
-    description: 'the personal orbitux website',
-    verification: {
-        google: 'YqRFW-zvQbF2eLCVZlaIVRjbXI932nrXpls25hlBKEM',
+    metadatabase: new URL("https://orbitux.space"),
+    title: {
+        default: "Orbitux Blog",
+        template: "%s | Orbitux"
     },
+    description: "Orbitux Blog - مقالات و آموزش های لینوکس و برنامه نویسی",
+    keywords: [
+        "Orbitux",
+        "Programming",
+        "Linux",
+        "Next.js",
+        "React",
+        "Web Development",
+        "Jacascript"
+    ],
+    authors: [
+        {
+            name: "Orbitux",
+            url: "https://orbitux.space"
+        }
+    ],
     icons: {
-        icon: '/orb3.png',
+        icon: "/orb3.png",
     },
+    robots: {
+        index: true,
+        follow: true
+    }
 };
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
-            <link rel="icon" href="/orb3.png" type="image/png" />
+        <html lang="fa">
+            {/* <link rel="icon" href="/orb3.png" type="image/png" /> */}
             <body className="bg-black text-white shadow-border">
                 <PostOptionProvider>
                     <MenuProvider>
