@@ -59,7 +59,6 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>تماس | وبلاگ شخصی محمد تفقدی</title>
         <meta name="description" content="تماس" />
       </Head>
       <div className='relative bg-contact-night'>
