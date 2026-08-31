@@ -58,7 +58,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="fa">
-            {/* <link rel="icon" href="/orb3.png" type="image/png" /> */}
             <body className="bg-black text-white shadow-border">
                 <PostOptionProvider>
                     <MenuProvider>
