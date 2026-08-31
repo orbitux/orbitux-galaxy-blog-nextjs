@@ -28,7 +28,7 @@ export const generateMetadata = async ({ params }) => {
             siteName: "Orbitux",
             images: [
                 {
-                    url: "/orb3.png",
+                    url: frontMatter.thumb,
                     width: 1200,
                     height: 630,
                     alt: frontMatter.title
