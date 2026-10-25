@@ -5,6 +5,7 @@ import animationData from './codingAnimationIcon.json'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
+import AnimeImages from './AnimeImages'
 const CodeEditor = () => {
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -24,7 +25,7 @@ const CodeEditor = () => {
         return () => ScrollTrigger.getAll().forEach(t => t.kill())
     }, [])
     return (
-        <div id='code_container' className='container my-16'>
+        <div id='code_container' className='container relative my-16'>
             <div className='flex flex-col md:flex-row items-center md:justify-around my-10'>
                 <div id='section_right' className='w-[50%] flex flex-col justify-between'>
                     <div >
@@ -41,6 +42,7 @@ const CodeEditor = () => {
                     <Lottie animationData={animationData} />
                 </div>
             </div>
+            <AnimeImages/>
         </div>
     )
 }

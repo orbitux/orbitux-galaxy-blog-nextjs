@@ -16,7 +16,7 @@ const Callout = ({ type = "info", children }) => {
         warning: {
             icon: IoMdAlert,
             title: "هشدار",
-            className: "border-yellow-500/50 bg-yellow-500/10 text-yellow-100"
+            className: `${darkmode ?  'border-yellow-500/50 bg-yellow-500/10 text-yellow-100': 'border-yellow700 bg-yellow-700/50 text-black'}`
         },
         success: {
             icon: FaCheckCircle,
