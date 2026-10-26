@@ -1,25 +1,14 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 'use client'
-import { Suspense, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useSearchParams, useRouter } from 'next/navigation'
-// import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import BlogContent from "@/components/BlogContent"
 import ReactPaginate from "react-paginate"
-// import Head from 'next/head'
-// import SearchBlog from "@/components/Search/SearchBlog"
 import { FaArrowLeft } from "react-icons/fa6";
 import Link from "next/link"
-// import SearchDialog from "./SearchDialog"
 import SearchInputUi from "./SearchInputUi"
-import dynamic from "next/dynamic"
-// import NotFound from "../not-found"
-// const Galaxy = dynamic(
-//     () => import("@/components/Galaxy/Galaxy"),
-//     {
-//         ssr: false
-//     }
-// )
+
 const BlogClient = ({ posts, my = 5, showPaginate = true }) => {
     const searchParams = useSearchParams()
     const router = useRouter()

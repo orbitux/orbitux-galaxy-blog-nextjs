@@ -1,5 +1,4 @@
 'use client'
-import { MultiMaterial } from '@react-three/drei'
 import { Check, Copy } from 'lucide-react'
 import React, { useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
