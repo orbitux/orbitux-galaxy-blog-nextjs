@@ -1,8 +1,6 @@
 'use client'
 import React, { useRef } from 'react'
 import CodeHeader from './CodeHeader'
-import CodeTabs from './CodeTabs'
-// import CopyCodeBtn from './CopyCodeBtn'
 
 const CodeBlock = ({ children, language = "text", filename = "" }) => {
     const codeRef = useRef(null)

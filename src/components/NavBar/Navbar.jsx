@@ -1,6 +1,5 @@
 'use client'
 import '../../styles/navbar.css'
-import { LuGithub } from "react-icons/lu";
 import Menu from './Menu';
 import { useContext, useEffect, useState } from 'react';
 import { CgMenuGridO } from "react-icons/cg";
@@ -8,14 +7,8 @@ import { RiCloseFill } from "react-icons/ri";
 import Link from 'next/link'
 import { MenuContext } from '../../contexts/MenuOpenContext';
 import Image from 'next/image'
-import Lottie from 'lottie-react';
-import animationData from '../../lordIcons/wired-lineal-2572-logo-github-hover-pinch.json'
-import animationTelegramIcon from '../../lordIcons/wired-lineal-2559-logo-telegram-hover-pinch.json'
-import animationEditorPage from '../../lordIcons/wired-lineal-1326-command-window-line-hover-blinking.json'
 import { FaTelegram } from 'react-icons/fa';
-import { VscEditorLayout } from 'react-icons/vsc';
 import { Code2 } from 'lucide-react';
-import { DiGithub, DiGithubBadge } from 'react-icons/di';
 import { PiGithubLogo } from 'react-icons/pi';
 const Navbar = () => {
     const [isNavFixed, setIsNavFixed] = useState(false)

@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import PostClient from "./PostClient";
 import { getPostsBySlug } from "@/lib/server/post";
-import PostContentRender from "@/components/PostContentRender";
 import CodeCopyButtons from "@/components/MDX/Code/CodeCopyButtons";
 const baseUrl = "https://orbitux.space"
 export const generateMetadata = async ({ params }) => {

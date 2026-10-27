@@ -3,7 +3,6 @@ import { FaNodeJs } from "react-icons/fa6";
 import { FaGitAlt } from "react-icons/fa";
 import { FaWordpressSimple } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
-import { TbBrandTailwind } from "react-icons/tb";
 import { AiOutlineLinux } from "react-icons/ai";
 import { SiGnubash } from "react-icons/si";
 const Icons = () => {

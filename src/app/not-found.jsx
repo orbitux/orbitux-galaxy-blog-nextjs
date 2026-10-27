@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import { Suspense } from 'react';
-import BlogPage from './blog/page';
 
 export default function NotFound() {
     const suggestedLinks = [

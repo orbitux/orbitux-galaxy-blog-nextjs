@@ -1,8 +1,6 @@
 "use client"
-import React, { useEffect } from 'react'
-import { PostOptionContext } from "@/contexts/PostOptionContext";
-import { useParams, usePathname } from "next/navigation";
-import { useContext, useState } from "react";
+import React from 'react'
+import {  usePathname } from "next/navigation";
 import PostShare from '@/components/PostShare';
 import Scroll from '@/components/Scroll';
 import { AiOutlineToTop } from 'react-icons/ai';

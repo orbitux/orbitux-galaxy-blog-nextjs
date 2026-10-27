@@ -1,8 +1,7 @@
 'use client'
-import React, { Children, cloneElement, useState } from 'react'
+import React, { Children, cloneElement } from 'react'
 import CodeTabs from './CodeTabs'
 import { useCodeGroup } from './CodeGroupProvider'
-import CodeBlock from './CodeBlock'
 
 const CodeGroup = ({ tabs, children }) => {
     const { preferredTab, setPreferredTab } = useCodeGroup()

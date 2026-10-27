@@ -1,4 +1,3 @@
-import CodeBlock from './Code'
 import Callout from './Callout'
 import Heading from './Heading'
 import CodeGroup from './Code/CodeGroup'

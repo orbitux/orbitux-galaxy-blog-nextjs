@@ -1,12 +1,12 @@
 'use client'
-import { KeyboardEvent, memo, useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import React from 'react'
 import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "./ui/command";
 import Link from "next/link";
 import { useOpen } from "@/contexts/OpenDialogContext";
 
 const SearchDialog = ({ posts }) => {
-    const {open, setOpen} = useOpen()
+    const { open, setOpen } = useOpen()
     const [query, setQuery] = useState('')
     useEffect(() => {
         const onKeyDown = (e) => {

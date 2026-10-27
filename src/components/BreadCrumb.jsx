@@ -3,7 +3,6 @@
 import { useDark } from '@/contexts/DarkModeContext'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
 
 const formatSlug = (slug) => {
     return slug
