@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
-import Header from "@/components/Header/Header"
 import Order from "@/components/Services"
 import BlogLayout from "./BlogLayout"
 import CodeEditor from "@/components/CodeEditor"
+import Hero from "@/components/Hero/Hero"
 
 
 const MainLayout = ({ children }) => {
     return (
         <div>
-            <Header />
+            <Hero />
             <Order />
             <CodeEditor />
             <BlogLayout />
