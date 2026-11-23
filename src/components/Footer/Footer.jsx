@@ -1,6 +1,6 @@
 import Menu from "../NavBar/Menu"
 import { DiGithubFull } from "react-icons/di";
-import { FaTelegram } from "react-icons/fa";
+import { FaRss, FaTelegram } from "react-icons/fa";
 import { FaRobot } from "react-icons/fa6";
 
 const Footer = () => {
@@ -49,6 +49,13 @@ const Footer = () => {
                                 <FaRobot />
                             </a>
                         </li>
+                        <li>
+                            <a href="/feed.xml" target="_blank" rel="noopener noreferrer" aria-label="RSS Feed"
+                                title="RSS Feed" className="hover:text-orange-500 transition-colors"
+                            >
+                                <FaRss />
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -57,9 +64,7 @@ const Footer = () => {
                     follow me on <DiGithubFull className="text-8xl text-purple-800" />
                 </h4>
             </div>
-            <div>
-                <a href="https://lordicon.com/">Icons by Lordicon.com</a>
-            </div>
+
         </div>
     )
 }

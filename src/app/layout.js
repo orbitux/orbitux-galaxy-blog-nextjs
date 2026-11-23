@@ -23,7 +23,7 @@ export const metadata = {
         "Next.js",
         "React",
         "Web Development",
-        "Jacascript"
+        "Javascript"
     ],
     authors: [
         {
@@ -52,23 +52,33 @@ export const metadata = {
                 alt: "Orbitux"
             }
         ]
+    },
+    alternates: {
+        types: {
+            "application/rss+xml": [
+                {
+                    url: "/feed.xml",
+                    title: "Orbitux RSS Feed"
+                }
+            ]
+        }
     }
 };
 export default function RootLayout({ children }) {
     return (
         <html lang="fa">
             <body className="bg-black text-white shadow-border">
-                    <MenuProvider>
-                        <OpenProvider>
-                            <DarkModeProvider>
-                                <Navbar />
-                                <BreadCrumb />
-                                <Toaster position="top-center" reverseOrder={true} />
-                                {children}
-                                <Footer />
-                            </DarkModeProvider>
-                        </OpenProvider>
-                    </MenuProvider>
+                <MenuProvider>
+                    <OpenProvider>
+                        <DarkModeProvider>
+                            <Navbar />
+                            <BreadCrumb />
+                            <Toaster position="top-center" reverseOrder={true} />
+                            {children}
+                            <Footer />
+                        </DarkModeProvider>
+                    </OpenProvider>
+                </MenuProvider>
             </body>
         </html>
     );
